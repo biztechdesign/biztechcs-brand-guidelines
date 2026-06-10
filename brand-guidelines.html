@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BiztechCS Brand Guidelines v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-navy:#0B1F3A; --color-primary:#1A4F9C; --color-accent:#F5A623;
+  --color-teal:#00B4D8; --color-charcoal:#1E2532; --color-gray-700:#3D4354;
+  --color-gray-500:#6B7280; --color-gray-300:#D1D5DB; --color-gray-100:#F3F4F6;
+  --color-gray-50:#F9FAFB; --color-bg:#fff; --color-border:#E5E7EB;
+  --color-success:#10B981; --color-warning:#F59E0B; --color-error:#EF4444;
+  --color-info:#3B82F6;
+  --font-heading:"Poppins",sans-serif; --font-body:"Inter",sans-serif;
+  --font-mono:"JetBrains Mono",monospace;
+  --radius-sm:6px; --radius-md:8px; --radius-lg:12px;
+  --shadow-sm:0 2px 12px rgba(0,0,0,.06); --shadow-md:0 4px 20px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 32px rgba(0,0,0,.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--color-charcoal);background:#f8f9fb;line-height:1.7;font-size:15px}
+
+/* ── LAYOUT ── */
+.layout{display:flex;min-height:100vh}
+.sidebar{width:272px;min-width:272px;background:var(--color-navy);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-track{background:transparent}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:4px}
+.main{flex:1;min-width:0;padding:48px 56px;max-width:1100px}
+
+/* ── SIDEBAR ── */
+.sidebar-header{padding:28px 24px 20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sidebar-logo{font-family:var(--font-heading);font-size:17px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.sidebar-logo span{background:var(--color-accent);color:var(--color-navy);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.05em}
+.sidebar-meta{font-size:11px;color:rgba(255,255,255,.45);margin-top:6px}
+.sidebar-nav{padding:16px 0}
+.nav-section{margin-bottom:4px}
+.nav-section-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:10px 24px 4px}
+.nav-link{display:block;padding:7px 24px;font-size:13px;color:rgba(255,255,255,.65);text-decoration:none;transition:all .15s ease;border-left:3px solid transparent}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.06);border-left-color:rgba(255,255,255,.3)}
+.nav-link.active{color:#fff;background:rgba(245,166,35,.12);border-left-color:var(--color-accent)}
+
+/* ── PAGE HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-primary) 100%);color:#fff;padding:56px;border-radius:16px;margin-bottom:48px;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(245,166,35,.08)}
+.page-header-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent);margin-bottom:12px}
+.page-header h1{font-family:var(--font-heading);font-size:42px;font-weight:800;line-height:1.15;margin-bottom:16px}
+.page-header p{font-size:16px;color:rgba(255,255,255,.75);max-width:560px;line-height:1.7}
+.page-header-meta{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
+.meta-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.8)}
+
+/* ── SECTIONS ── */
+.section{margin-bottom:64px;scroll-margin-top:32px}
+.section-header{margin-bottom:32px}
+.section-number{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);font-family:var(--font-heading)}
+.section-title{font-family:var(--font-heading);font-size:28px;font-weight:700;color:var(--color-navy);margin-top:6px;line-height:1.25}
+.section-divider{width:48px;height:3px;background:var(--color-accent);border-radius:2px;margin-top:14px}
+.subsection{margin-bottom:32px}
+.subsection h3{font-family:var(--font-heading);font-size:17px;font-weight:600;color:var(--color-charcoal);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--color-border)}
+.subsection h4{font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-gray-700);margin:20px 0 10px}
+
+/* ── CALLOUT / BLOCKQUOTE ── */
+.callout{background:#fffbf0;border-left:4px solid var(--color-accent);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;font-size:14px;color:var(--color-gray-700)}
+.callout strong{color:var(--color-charcoal)}
+.callout-info{background:#eff6ff;border-left-color:var(--color-info)}
+.callout-success{background:#ecfdf5;border-left-color:var(--color-success)}
+
+/* ── TABLES ── */
+.table-wrap{overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--color-border);margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead{background:var(--color-gray-100)}
+thead th{padding:10px 14px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-gray-500);white-space:nowrap}
+tbody td{padding:11px 14px;border-top:1px solid var(--color-border);color:var(--color-gray-700);vertical-align:top}
+tbody tr:hover td{background:var(--color-gray-50)}
+td code,th code{background:#f0f2f5;padding:1px 5px;border-radius:3px;font-family:var(--font-mono);font-size:12px;color:var(--color-primary)}
+
+/* ── CODE BLOCKS ── */
+.code-block{background:#0d1117;border-radius:var(--radius-md);overflow:hidden;margin:16px 0}
+.code-block-header{background:#161b22;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.code-lang{font-size:11px;font-weight:600;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em}
+.code-copy{background:rgba(255,255,255,.08);border:none;border-radius:4px;padding:3px 10px;font-size:11px;color:rgba(255,255,255,.5);cursor:pointer;font-family:var(--font-body);transition:.15s ease}
+.code-copy:hover{background:rgba(255,255,255,.15);color:#fff}
+pre{padding:20px;overflow-x:auto;font-size:13px;line-height:1.65}
+pre code{font-family:var(--font-mono);color:#e6edf3}
+.kw{color:#ff7b72} .fn{color:#d2a8ff} .str{color:#a5d6ff}
+.cm{color:#8b949e;font-style:italic} .num{color:#79c0ff} .prop{color:#ffa657}
+
+/* ── COLOR PALETTE ── */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:16px 0}
+.color-card{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--color-border);background:#fff}
+.color-swatch{height:72px;width:100%}
+.color-info{padding:10px 12px}
+.color-name{font-size:12px;font-weight:600;color:var(--color-charcoal);margin-bottom:2px}
+.color-hex{font-size:11px;font-family:var(--font-mono);color:var(--color-gray-500)}
+.color-usage{font-size:11px;color:var(--color-gray-500);margin-top:4px;line-height:1.4}
+
+/* ── TYPOGRAPHY PREVIEWS ── */
+.type-scale{margin:16px 0}
+.type-row{display:flex;align-items:baseline;gap:20px;padding:14px 0;border-bottom:1px solid var(--color-border)}
+.type-row:last-child{border-bottom:none}
+.type-meta{flex-shrink:0;width:120px}
+.type-label{font-size:11px;font-weight:600;color:var(--color-gray-500);text-transform:uppercase;letter-spacing:.06em}
+.type-spec{font-size:11px;color:var(--color-gray-500);margin-top:2px;font-family:var(--font-mono)}
+.type-preview{flex:1;color:var(--color-charcoal)}
+
+/* ── BUTTON PREVIEWS ── */
+.btn-preview-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:20px;background:var(--color-gray-50);border-radius:var(--radius-md);margin:12px 0}
+.btn-preview-row.dark-bg{background:var(--color-navy)}
+.btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-weight:600;font-size:14px;cursor:pointer;border:none;transition:all .2s ease;text-decoration:none;line-height:1}
+.btn-sm{padding:7px 14px;font-size:12px}
+.btn-md{padding:11px 24px;font-size:14px}
+.btn-lg{padding:14px 32px;font-size:16px}
+.btn-primary-live{background:var(--color-accent);color:var(--color-navy);border-radius:6px}
+.btn-primary-live:hover{background:#e69512;box-shadow:0 4px 16px rgba(245,166,35,.35);transform:translateY(-1px)}
+.btn-secondary-live{background:var(--color-primary);color:#fff;border-radius:6px}
+.btn-secondary-live:hover{background:#153f7f;box-shadow:0 4px 16px rgba(26,79,156,.3);transform:translateY(-1px)}
+.btn-outline-live{background:transparent;color:var(--color-primary);border:2px solid var(--color-primary);border-radius:6px}
+.btn-outline-live:hover{background:var(--color-primary);color:#fff}
+.btn-outline-inv{background:transparent;color:#fff;border:2px solid #fff;border-radius:6px}
+.btn-outline-inv:hover{background:rgba(255,255,255,.15)}
+.btn-text-live{background:transparent;color:var(--color-primary);border:none;padding:8px 4px;font-weight:500}
+.btn-text-live:hover{color:var(--color-accent)}
+.btn-disabled{background:rgba(245,166,35,.35);color:rgba(11,31,58,.45);border-radius:6px;cursor:not-allowed;padding:11px 24px;font-size:14px}
+
+/* ── FORM PREVIEWS ── */
+.form-demo{max-width:480px;background:#fff;border-radius:var(--radius-lg);padding:28px;border:1px solid var(--color-border);margin:16px 0}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:13px;font-weight:500;color:var(--color-gray-700);margin-bottom:6px}
+.form-label .req{color:var(--color-error)}
+.form-input{height:44px;width:100%;padding:10px 14px;border:1.5px solid var(--color-border);border-radius:6px;font-size:14px;font-family:var(--font-body);color:var(--color-charcoal);outline:none;transition:.2s ease}
+.form-input:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(26,79,156,.12)}
+.form-input.is-error{border-color:var(--color-error)}
+.form-input.is-success{border-color:var(--color-success)}
+.form-input::placeholder{color:#9ca3af}
+textarea.form-input{height:100px;resize:vertical}
+.form-helper{font-size:12px;color:var(--color-gray-500);margin-top:4px}
+.form-error-msg{font-size:12px;color:var(--color-error);margin-top:4px}
+.form-success-msg{font-size:12px;color:var(--color-success);margin-top:4px}
+
+/* ── SPACING VIZ ── */
+.space-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin:16px 0}
+.space-card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-md);padding:14px;display:flex;align-items:center;gap:12px}
+.space-bar{background:var(--color-primary);border-radius:3px;height:10px;flex-shrink:0}
+.space-label{font-size:12px}
+.space-token{font-family:var(--font-mono);color:var(--color-primary);font-size:11px}
+.space-val{color:var(--color-gray-500);font-size:11px}
+
+/* ── CARD PREVIEWS ── */
+.card-demo{background:#fff;border:1px solid var(--color-border);border-radius:12px;box-shadow:var(--shadow-sm);padding:24px;transition:box-shadow .25s ease,transform .25s ease;cursor:default}
+.card-demo:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin:16px 0}
+.card-icon-wrap{width:48px;height:48px;background:#e8f0fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px}
+.card-demo h4{font-family:var(--font-heading);font-size:16px;font-weight:600;color:var(--color-charcoal);margin-bottom:8px}
+.card-demo p{font-size:13px;color:var(--color-gray-700);line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:13px;font-weight:500;color:var(--color-primary);text-decoration:none}
+.card-link:hover{color:var(--color-accent)}
+
+/* ── BADGE PREVIEWS ── */
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.badge{display:inline-flex;align-items:center;padding:3px 10px;font-size:12px;font-weight:600;border-radius:4px;line-height:1.5}
+.badge-pill{border-radius:100px}
+.badge-blue{background:#e8f0fe;color:#1a4f9c}
+.badge-gray{background:#f3f4f6;color:#3d4354}
+.badge-orange{background:#fff3e0;color:#e65c00}
+.badge-green{background:#ecfdf5;color:#047857}
+.badge-teal{background:#e0f7fa;color:#00838f}
+
+/* ── ALERT PREVIEWS ── */
+.alert{padding:12px 16px;border-radius:6px;border-left:4px solid;font-size:14px;display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+.alert-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.alert-info{background:#eff6ff;border-color:var(--color-info);color:#1e40af}
+.alert-success{background:#ecfdf5;border-color:var(--color-success);color:#065f46}
+.alert-warning{background:#fffbeb;border-color:var(--color-warning);color:#92400e}
+.alert-error{background:#fef2f2;border-color:var(--color-error);color:#991b1b}
+
+/* ── STAT STRIP ── */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--radius-lg);border:1px solid var(--color-border);overflow:hidden;margin:16px 0}
+.stat-item{padding:24px;text-align:center;border-right:1px solid var(--color-border)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:var(--font-heading);font-size:40px;font-weight:800;color:var(--color-accent);line-height:1}
+.stat-lbl{font-size:13px;font-weight:500;color:var(--color-gray-500);margin-top:6px}
+
+/* ── LOGO ZONE ── */
+.logo-box{border-radius:var(--radius-lg);border:1px solid var(--color-border);padding:32px;display:flex;align-items:center;justify-content:center;margin:10px 0;flex-direction:column;gap:8px}
+.logo-light{background:#fff}
+.logo-dark{background:var(--color-navy)}
+.logo-text{font-family:var(--font-heading);font-size:26px;font-weight:800;letter-spacing:-.01em}
+.logo-text .biz{color:var(--color-primary)}
+.logo-text .tech{color:var(--color-accent)}
+.logo-text .cs{color:var(--color-charcoal)}
+.logo-text-inv .biz,.logo-text-inv .cs{color:#fff}
+.logo-note{font-size:11px;color:var(--color-gray-500);font-weight:500;margin-top:4px}
+
+/* ── DO / DON'T ── */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.do-box,.dont-box{border-radius:var(--radius-md);padding:20px}
+.do-box{background:#ecfdf5;border:1px solid #a7f3d0}
+.dont-box{background:#fef2f2;border:1px solid #fecaca}
+.do-box h5{font-size:13px;font-weight:700;color:#065f46;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.dont-box h5{font-size:13px;font-weight:700;color:#991b1b;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.do-box ul,.dont-box ul{padding-left:16px;font-size:13px;line-height:1.7}
+.do-box li{color:#065f46}
+.dont-box li{color:#991b1b}
+
+/* ── INLINE UTILS ── */
+.pill{display:inline-block;background:var(--color-gray-100);border-radius:100px;padding:2px 10px;font-size:12px;font-family:var(--font-mono);color:var(--color-primary)}
+p{margin-bottom:12px;color:var(--color-gray-700)}
+ul,ol{padding-left:20px;margin-bottom:12px;color:var(--color-gray-700)}
+li{margin-bottom:4px;font-size:14px;line-height:1.65}
+strong{color:var(--color-charcoal);font-weight:600}
+hr{border:none;border-top:1px solid var(--color-border);margin:32px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+@media(max-width:900px){.two-col,.do-dont,.stat-strip{grid-template-columns:1fr}.sidebar{display:none}.main{padding:24px 20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <span>BCS</span> Brand Guidelines
+    </div>
+    <div class="sidebar-meta">Version 1.0 &nbsp;·&nbsp; June 2026</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-label">Foundation</div>
+      <a href="#s1" class="nav-link">01 · Brand Overview</a>
+      <a href="#s2" class="nav-link">02 · Logo Guidelines</a>
+      <a href="#s3" class="nav-link">03 · Color Palette</a>
+      <a href="#s4" class="nav-link">04 · Typography</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Layout</div>
+      <a href="#s5" class="nav-link">05 · Layout System</a>
+      <a href="#s6" class="nav-link">06 · Spacing System</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Components</div>
+      <a href="#s7" class="nav-link">07 · Button Guidelines</a>
+      <a href="#s8" class="nav-link">08 · Form &amp; Input</a>
+      <a href="#s9" class="nav-link">09 · Cards &amp; Containers</a>
+      <a href="#s10" class="nav-link">10 · Navigation</a>
+      <a href="#s11" class="nav-link">11 · Iconography</a>
+      <a href="#s12" class="nav-link">12 · Imagery</a>
+      <a href="#s13" class="nav-link">13 · UI Components</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-label">Guidelines</div>
+      <a href="#s14" class="nav-link">14 · Motion</a>
+      <a href="#s15" class="nav-link">15 · Accessibility</a>
+      <a href="#s16" class="nav-link">16 · Content Style</a>
+      <a href="#s17" class="nav-link">17 · Design Tokens</a>
+      <a href="#s18" class="nav-link">18 · Implementation</a>
+      <a href="#s19" class="nav-link">19 · Do's &amp; Don'ts</a>
+      <a href="#s20" class="nav-link">20 · Brand Summary</a>
+    </div>
+  </nav>
+</aside>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-eyebrow">Biztech Consulting &amp; Solutions</div>
+    <h1>Brand Guidelines</h1>
+    <p>The single source of truth for all BiztechCS brand expressions — for designers, developers, content writers, and marketing teams.</p>
+    <div class="page-header-meta">
+      <span class="meta-pill">Version 1.0</span>
+      <span class="meta-pill">June 2026</span>
+      <span class="meta-pill">20 Sections</span>
+      <span class="meta-pill">biztechcs.com</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 1 — BRAND OVERVIEW
+  ════════════════════════════════════════ -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <div class="section-number">Section 01</div>
+      <h2 class="section-title">Brand Overview</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Brand Name &amp; Positioning</h3>
+      <p><strong>Biztech Consulting &amp; Solutions</strong> (abbreviated <strong>BiztechCS</strong>) positions itself as a full-spectrum digital transformation partner for mid-market and enterprise businesses globally. With 19+ years of expertise, 1,300+ completed projects, and a 200+ member team, Biztech bridges the gap between business challenges and technology capabilities — delivering measurable outcomes rather than just code.</p>
+      <div class="callout">
+        <strong>"Tech that works, so you don't have to."</strong> — Core brand tagline
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Brand Personality</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trait</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Expert</strong></td><td>19+ years of depth across product development, AI, ERP, and cloud</td></tr>
+            <tr><td><strong>Trustworthy</strong></td><td>98% client retention; transparent, long-term partnerships</td></tr>
+            <tr><td><strong>Innovative</strong></td><td>Adoption of cutting-edge technologies including AI/ML and cloud-native</td></tr>
+            <tr><td><strong>Approachable</strong></td><td>Avoids jargon overload; speaks to business outcomes, not just tech</td></tr>
+            <tr><td><strong>Results-Driven</strong></td><td>Quantifies impact; uses numbers and metrics in messaging</td></tr>
+            <tr><td><strong>Growth-Oriented</strong></td><td>Positioned as a growth partner, not just a vendor</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Target Audience</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Segment</th><th>Role</th><th>Need</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-blue">Primary</span></td><td>CTOs, VPs of Engineering</td><td>Technical execution at scale, staff augmentation</td></tr>
+            <tr><td><span class="badge badge-blue">Primary</span></td><td>CEOs, COOs of SMBs / Mid-market</td><td>Digital transformation, cost optimization</td></tr>
+            <tr><td><span class="badge badge-gray">Secondary</span></td><td>Product Managers</td><td>MVP development, product iteration</td></tr>
+            <tr><td><span class="badge badge-gray">Secondary</span></td><td>IT Procurement</td><td>Vendor evaluation, compliance, trust signals</td></tr>
+            <tr><td><span class="badge badge-teal">Tertiary</span></td><td>Startup Founders</td><td>Rapid product development, MVP to scale</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Geographies:</strong> North America · Europe · Middle East · Australia · India</p>
+    </div>
+
+    <div class="subsection">
+      <h3>Tone &amp; Voice</h3>
+      <p>BiztechCS communicates with a <strong>confident, consultative, and outcome-focused</strong> voice.</p>
+      <ul>
+        <li><strong>Professional but human</strong> — Not cold corporate-speak; real partnership language</li>
+        <li><strong>Direct</strong> — Leads with the benefit, then explains the how</li>
+        <li><strong>Data-backed</strong> — Reinforces claims with numbers (19+ years, 98% retention, 1300+ projects)</li>
+        <li><strong>Action-oriented</strong> — Every piece of content ends with a clear next step</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>Social Proof Strip — Live Preview</h3>
+      <div class="stat-strip">
+        <div class="stat-item"><div class="stat-num">19+</div><div class="stat-lbl">Years Expertise</div></div>
+        <div class="stat-item"><div class="stat-num">1300+</div><div class="stat-lbl">Projects Completed</div></div>
+        <div class="stat-item"><div class="stat-num">200+</div><div class="stat-lbl">Team Members</div></div>
+        <div class="stat-item"><div class="stat-num">98%</div><div class="stat-lbl">Client Retention</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 2 — LOGO
+  ════════════════════════════════════════ -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <div class="section-number">Section 02</div>
+      <h2 class="section-title">Logo Guidelines</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Logo Variations — Live Preview</h3>
+      <div class="two-col">
+        <div class="logo-box logo-light">
+          <div class="logo-text"><span class="biz">Biztech</span><span class="tech">CS</span></div>
+          <div class="logo-note">Full color — light background</div>
+        </div>
+        <div class="logo-box logo-dark">
+          <div class="logo-text logo-text-inv"><span class="biz">Biztech</span><span class="tech">CS</span></div>
+          <div class="logo-note" style="color:rgba(255,255,255,.45)">Reversed — dark background</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Minimum Size Recommendations</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Application</th><th>Minimum Width</th></tr></thead>
+          <tbody>
+            <tr><td>Digital (screen)</td><td><code>120px</code></td></tr>
+            <tr><td>Print</td><td><code>25mm</code></td></tr>
+            <tr><td>Favicon / App Icon</td><td><code>32px</code> (icon-only mark)</td></tr>
+            <tr><td>Email signature</td><td><code>150px</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Background Usage</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Background Type</th><th>Recommended Version</th></tr></thead>
+          <tbody>
+            <tr><td>White / Light gray</td><td>Full color</td></tr>
+            <tr><td>Dark navy / Charcoal</td><td>White reversed</td></tr>
+            <tr><td>Yellow / Brand accent</td><td>Dark (charcoal or navy)</td></tr>
+            <tr><td>Photography</td><td>White reversed + dark scrim</td></tr>
+            <tr><td>Gradient (dark-to-light)</td><td>White or full color</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Incorrect Logo Usage</h3>
+      <ul>
+        <li>Do not stretch, skew, or distort the logo</li>
+        <li>Do not recolor outside approved palette variations</li>
+        <li>Do not apply drop shadows or outer glows directly to the logo</li>
+        <li>Do not place full-color logo on a busy photographic background without contrast</li>
+        <li>Do not recreate the logo using a different font</li>
+        <li>Do not rotate the logo</li>
+        <li>Do not add taglines beneath the logo unless part of an approved lockup</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 3 — COLOR PALETTE
+  ════════════════════════════════════════ -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <div class="section-number">Section 03</div>
+      <h2 class="section-title">Color Palette</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Primary Colors</h3>
+      <div class="color-grid">
+        <div class="color-card"><div class="color-swatch" style="background:#0B1F3A"></div><div class="color-info"><div class="color-name">Brand Navy</div><div class="color-hex">#0B1F3A</div><div class="color-usage">Hero BG, footer, authority text</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#1A4F9C"></div><div class="color-info"><div class="color-name">Brand Blue</div><div class="color-hex">#1A4F9C</div><div class="color-usage">Links, secondary CTAs, icons</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#F5A623"></div><div class="color-info"><div class="color-name">Brand Yellow</div><div class="color-hex">#F5A623</div><div class="color-usage">Primary CTA, accent highlights</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#00B4D8"></div><div class="color-info"><div class="color-name">Teal Accent</div><div class="color-hex">#00B4D8</div><div class="color-usage">Icon highlights, tech section</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Neutral Colors</h3>
+      <div class="color-grid">
+        <div class="color-card"><div class="color-swatch" style="background:#1E2532"></div><div class="color-info"><div class="color-name">Charcoal</div><div class="color-hex">#1E2532</div><div class="color-usage">Primary body text, headings</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#3D4354"></div><div class="color-info"><div class="color-name">Dark Gray</div><div class="color-hex">#3D4354</div><div class="color-usage">Secondary body text</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#6B7280"></div><div class="color-info"><div class="color-name">Medium Gray</div><div class="color-hex">#6B7280</div><div class="color-usage">Placeholders, meta info</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#D1D5DB;border:1px solid #e5e7eb"></div><div class="color-info"><div class="color-name">Light Gray</div><div class="color-hex">#D1D5DB</div><div class="color-usage">Borders, dividers</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#F3F4F6;border:1px solid #e5e7eb"></div><div class="color-info"><div class="color-name">Pale Gray</div><div class="color-hex">#F3F4F6</div><div class="color-usage">Section backgrounds</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#FFFFFF;border:1px solid #e5e7eb"></div><div class="color-info"><div class="color-name">White</div><div class="color-hex">#FFFFFF</div><div class="color-usage">Primary page background</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Semantic / System Colors</h3>
+      <div class="color-grid">
+        <div class="color-card"><div class="color-swatch" style="background:#10B981"></div><div class="color-info"><div class="color-name">Success</div><div class="color-hex">#10B981</div><div class="color-usage">Form success, positive states</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#F59E0B"></div><div class="color-info"><div class="color-name">Warning</div><div class="color-hex">#F59E0B</div><div class="color-usage">Caution messages</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#EF4444"></div><div class="color-info"><div class="color-name">Error</div><div class="color-hex">#EF4444</div><div class="color-usage">Validation errors</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#3B82F6"></div><div class="color-info"><div class="color-name">Info</div><div class="color-hex">#3B82F6</div><div class="color-usage">Informational banners</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Text Color Reference</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>HEX</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr><td>Primary Text</td><td><code>#1E2532</code></td><td>Body copy, headings, nav links</td></tr>
+            <tr><td>Secondary Text</td><td><code>#3D4354</code></td><td>Subheadings, card body copy</td></tr>
+            <tr><td>Muted Text</td><td><code>#6B7280</code></td><td>Captions, meta, timestamps</td></tr>
+            <tr><td>Inverted Text</td><td><code>#FFFFFF</code></td><td>Text on dark/navy backgrounds</td></tr>
+            <tr><td>Link Text</td><td><code>#1A4F9C</code></td><td>Inline text links</td></tr>
+            <tr><td>Link Hover</td><td><code>#F5A623</code></td><td>Hovered text links</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 4 — TYPOGRAPHY
+  ════════════════════════════════════════ -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <div class="section-number">Section 04</div>
+      <h2 class="section-title">Typography</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Font Families</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Role</th><th>Font</th><th>Fallback</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Headings</strong></td><td><code>Poppins</code></td><td>"Segoe UI", "Helvetica Neue", Arial, sans-serif</td></tr>
+            <tr><td><strong>Body</strong></td><td><code>Inter</code></td><td>"Segoe UI", "Helvetica Neue", Arial, sans-serif</td></tr>
+            <tr><td><strong>Monospace</strong></td><td><code>JetBrains Mono</code></td><td>"Fira Code", "Courier New", monospace</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info">
+        <strong>[Recommended]</strong> Based on the modern geometric sans-serif appearance across the site. Poppins + Inter is the most common pairing for enterprise SaaS products of this category.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Heading Scale — Live Preview</h3>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">H1</div><div class="type-spec">56px · 700 · 1.15</div></div>
+          <div class="type-preview" style="font-family:var(--font-heading);font-size:clamp(28px,4vw,56px);font-weight:700;line-height:1.15;color:var(--color-navy)">Digital Transformation</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">H2</div><div class="type-spec">40px · 700 · 1.2</div></div>
+          <div class="type-preview" style="font-family:var(--font-heading);font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;color:var(--color-navy)">Our Services &amp; Capabilities</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">H3</div><div class="type-spec">28px · 600 · 1.3</div></div>
+          <div class="type-preview" style="font-family:var(--font-heading);font-size:28px;font-weight:600;line-height:1.3;color:var(--color-charcoal)">Product Development</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">H4</div><div class="type-spec">22px · 600 · 1.35</div></div>
+          <div class="type-preview" style="font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.35;color:var(--color-charcoal)">ReactJS Development</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">H5</div><div class="type-spec">18px · 600 · 1.4</div></div>
+          <div class="type-preview" style="font-family:var(--font-heading);font-size:18px;font-weight:600;line-height:1.4;color:var(--color-charcoal)">Case Study Overview</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">H6</div><div class="type-spec">16px · 600 · 1.5</div></div>
+          <div class="type-preview" style="font-family:var(--font-heading);font-size:16px;font-weight:600;line-height:1.5;color:var(--color-charcoal)">Section Label</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Body Text Scale — Live Preview</h3>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">Body Lg</div><div class="type-spec">18px · 400 · 1.7</div></div>
+          <div class="type-preview" style="font-size:18px;line-height:1.7">We build digital products that scale — from MVP to enterprise, with 19 years of proven delivery.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">Body</div><div class="type-spec">16px · 400 · 1.75</div></div>
+          <div class="type-preview" style="font-size:16px;line-height:1.75">Standard body text used for card descriptions, paragraphs, and general content across the site.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">Body Sm</div><div class="type-spec">14px · 400 · 1.6</div></div>
+          <div class="type-preview" style="font-size:14px;line-height:1.6;color:var(--color-gray-500)">Meta information, captions, helper text, timestamps — secondary content.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta"><div class="type-label">Caption</div><div class="type-spec">12px · 400 · 1.5</div></div>
+          <div class="type-preview" style="font-size:12px;line-height:1.5;color:var(--color-gray-500)">Legal disclaimers, footnotes, micro-copy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Special Text Styles</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;padding:20px;background:var(--color-gray-50);border-radius:var(--radius-md);margin:12px 0">
+        <div style="text-align:center">
+          <div style="font-family:var(--font-heading);font-size:52px;font-weight:800;color:var(--color-accent);line-height:1">19+</div>
+          <div style="font-size:13px;font-weight:500;color:var(--color-gray-500)">Stat Number</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-primary)">OUR SERVICES</div>
+          <div style="font-size:13px;font-weight:500;color:var(--color-gray-500);margin-top:4px">Eyebrow Label</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent)">CASE STUDIES</div>
+          <div style="font-size:13px;font-weight:500;color:var(--color-gray-500);margin-top:4px">Eyebrow (dark BG)</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:18px;font-style:italic;color:var(--color-gray-700)">"Game-changing partnership."</div>
+          <div style="font-size:13px;font-weight:500;color:var(--color-gray-500);margin-top:4px">Testimonial Quote</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 5 — LAYOUT SYSTEM
+  ════════════════════════════════════════ -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <div class="section-number">Section 05</div>
+      <h2 class="section-title">Layout System</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Container Widths</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Breakpoint</th><th>Container Max Width</th><th>Side Padding</th></tr></thead>
+          <tbody>
+            <tr><td>Mobile (&lt; 768px)</td><td><code>100%</code></td><td><code>16px</code></td></tr>
+            <tr><td>Tablet (768–1023px)</td><td><code>100%</code></td><td><code>24px</code></td></tr>
+            <tr><td>Laptop (1024–1279px)</td><td><code>960px</code></td><td><code>32px</code></td></tr>
+            <tr><td>Desktop (1280–1535px)</td><td><code>1200px</code></td><td><code>40px</code></td></tr>
+            <tr><td>Wide (≥ 1536px)</td><td><code>1440px</code></td><td><code>auto</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Grid System (12-column)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Context</th><th>Columns</th><th>Gutter</th></tr></thead>
+          <tbody>
+            <tr><td>Hero layout</td><td>12 (full)</td><td><code>32px</code></td></tr>
+            <tr><td>Service cards (desktop)</td><td>3 or 4 per row</td><td><code>24px</code></td></tr>
+            <tr><td>Service cards (tablet)</td><td>2 per row</td><td><code>20px</code></td></tr>
+            <tr><td>Blog / Case study cards</td><td>3 per row → 1 on mobile</td><td><code>24px</code></td></tr>
+            <tr><td>Stats row</td><td>4 per row → 2 on mobile</td><td><code>24px</code></td></tr>
+            <tr><td>Footer columns</td><td>4–5 per row → 2 on mobile</td><td><code>32px</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Breakpoints</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">/* Breakpoint reference tokens */</span>
+<span class="prop">--breakpoint-sm</span>:  <span class="num">480px</span>;   <span class="cm">/* Large mobile */</span>
+<span class="prop">--breakpoint-md</span>:  <span class="num">768px</span>;   <span class="cm">/* Tablet portrait */</span>
+<span class="prop">--breakpoint-lg</span>: <span class="num">1024px</span>;   <span class="cm">/* Laptop */</span>
+<span class="prop">--breakpoint-xl</span>: <span class="num">1280px</span>;   <span class="cm">/* Standard desktop */</span>
+<span class="prop">--breakpoint-2xl</span>:<span class="num">1536px</span>;   <span class="cm">/* Wide/ultrawide */</span></code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Section Spacing</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Context</th><th>Top / Bottom Padding</th></tr></thead>
+          <tbody>
+            <tr><td>Full-page sections (desktop)</td><td><code>80px – 100px</code></td></tr>
+            <tr><td>Full-page sections (tablet)</td><td><code>60px</code></td></tr>
+            <tr><td>Full-page sections (mobile)</td><td><code>40px</code></td></tr>
+            <tr><td>CTA banner sections</td><td><code>60px – 80px</code></td></tr>
+            <tr><td>Hero sections</td><td><code>100px – 120px</code></td></tr>
+            <tr><td>Footer</td><td><code>60px top / 24px bottom</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Content Alignment Rules</h3>
+      <ul>
+        <li><strong>Left-aligned</strong> — Default for all body copy, card text, form labels</li>
+        <li><strong>Center-aligned</strong> — Section headings, eyebrow labels, stats rows, CTA sections</li>
+        <li><strong>Right-aligned</strong> — Reserved for numeric table cells and nav utilities only</li>
+        <li><strong>Full-width</strong> — Hero sections, CTA banners, footer, partner logo strips</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 6 — SPACING SYSTEM
+  ════════════════════════════════════════ -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <div class="section-number">Section 06</div>
+      <h2 class="section-title">Spacing System</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Base Unit — 8px</h3>
+      <p>All spacing values are multiples of <strong>8px</strong>. This ensures visual rhythm and prevents arbitrary spacing across components.</p>
+      <div class="space-grid">
+        <div class="space-card"><div class="space-bar" style="width:4px"></div><div class="space-label"><div class="space-token">--space-1</div><div class="space-val">4px — icon gap, tag padding</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:8px"></div><div class="space-label"><div class="space-token">--space-2</div><div class="space-val">8px — small padding</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:12px"></div><div class="space-label"><div class="space-token">--space-3</div><div class="space-val">12px — button padding-y</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:16px"></div><div class="space-label"><div class="space-token">--space-4</div><div class="space-val">16px — form field gap</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:20px"></div><div class="space-label"><div class="space-token">--space-5</div><div class="space-val">20px — card internal</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:24px"></div><div class="space-label"><div class="space-token">--space-6</div><div class="space-val">24px — grid gutters</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:32px"></div><div class="space-label"><div class="space-token">--space-8</div><div class="space-val">32px — card padding</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:40px"></div><div class="space-label"><div class="space-token">--space-10</div><div class="space-val">40px — section (mobile)</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:48px"></div><div class="space-label"><div class="space-token">--space-12</div><div class="space-val">48px — component gap</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:64px"></div><div class="space-label"><div class="space-token">--space-16</div><div class="space-val">64px — section (tablet)</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:80px"></div><div class="space-label"><div class="space-token">--space-20</div><div class="space-val">80px — section (desktop)</div></div></div>
+        <div class="space-card"><div class="space-bar" style="width:96px"></div><div class="space-label"><div class="space-token">--space-24</div><div class="space-val">96px — hero padding</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Component Spacing Reference</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Component</th><th>Internal Padding</th><th>Gap to Next</th></tr></thead>
+          <tbody>
+            <tr><td>Service card</td><td><code>24px</code></td><td><code>24px</code> grid gutter</td></tr>
+            <tr><td>CTA button</td><td><code>12px 28px</code></td><td><code>16px</code> nearby elements</td></tr>
+            <tr><td>Form input</td><td><code>12px 16px</code></td><td><code>16px</code> between fields</td></tr>
+            <tr><td>Nav link</td><td><code>8px 16px</code></td><td>—</td></tr>
+            <tr><td>Section heading → copy</td><td>—</td><td><code>16px</code></td></tr>
+            <tr><td>Section heading → card grid</td><td>—</td><td><code>40–48px</code></td></tr>
+            <tr><td>Icon → label</td><td>—</td><td><code>8–12px</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 7 — BUTTONS
+  ════════════════════════════════════════ -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <div class="section-number">Section 07</div>
+      <h2 class="section-title">Button Guidelines</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Live Button Previews</h3>
+      <div class="btn-preview-row">
+        <a class="btn btn-primary-live btn-lg">Talk to Experts</a>
+        <a class="btn btn-primary-live btn-md">Get Started</a>
+        <a class="btn btn-primary-live btn-sm">Book Call</a>
+      </div>
+      <div class="btn-preview-row">
+        <a class="btn btn-secondary-live btn-lg">View Case Study</a>
+        <a class="btn btn-secondary-live btn-md">Learn More</a>
+        <a class="btn btn-secondary-live btn-sm">Explore</a>
+      </div>
+      <div class="btn-preview-row">
+        <a class="btn btn-outline-live btn-lg">See All Services</a>
+        <a class="btn btn-outline-live btn-md">Download PDF</a>
+        <a class="btn btn-text-live btn-md">Explore More →</a>
+        <span class="btn-disabled">Disabled State</span>
+      </div>
+      <div class="btn-preview-row dark-bg">
+        <a class="btn btn-primary-live btn-md">Talk to Experts</a>
+        <a class="btn btn-outline-inv btn-md">Learn More</a>
+        <a class="btn btn-text-live btn-md" style="color:rgba(255,255,255,.7)">Explore More →</a>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Primary Button Spec</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Property</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Background</td><td><code>#F5A623</code> (Brand Yellow)</td></tr>
+            <tr><td>Text Color</td><td><code>#0B1F3A</code> (Brand Navy)</td></tr>
+            <tr><td>Border Radius</td><td><code>6px</code></td></tr>
+            <tr><td>Padding (md)</td><td><code>12px 28px</code></td></tr>
+            <tr><td>Font Size</td><td><code>15px</code></td></tr>
+            <tr><td>Font Weight</td><td><code>600</code></td></tr>
+            <tr><td>Hover BG</td><td><code>#E69512</code> + shadow</td></tr>
+            <tr><td>Active BG</td><td><code>#CF8710</code></td></tr>
+            <tr><td>Focus outline</td><td><code>3px solid rgba(245,166,35,0.5)</code>, offset 2px</td></tr>
+            <tr><td>Disabled</td><td>40% opacity, <code>cursor: not-allowed</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="fn">.btn-primary</span> {
+  <span class="prop">background-color</span>: <span class="fn">var</span>(<span class="str">--color-accent</span>);
+  <span class="prop">color</span>: <span class="fn">var</span>(<span class="str">--color-navy</span>);
+  <span class="prop">border</span>: <span class="kw">none</span>;
+  <span class="prop">border-radius</span>: <span class="fn">var</span>(<span class="str">--radius-sm</span>);
+  <span class="prop">padding</span>: <span class="num">12px 28px</span>;
+  <span class="prop">font-size</span>: <span class="num">15px</span>;
+  <span class="prop">font-weight</span>: <span class="num">600</span>;
+  <span class="prop">transition</span>: background-color <span class="num">0.2s</span> ease, box-shadow <span class="num">0.2s</span> ease;
+}
+<span class="fn">.btn-primary:hover</span> {
+  <span class="prop">background-color</span>: <span class="str">#E69512</span>;
+  <span class="prop">box-shadow</span>: <span class="num">0 4px 16px</span> <span class="fn">rgba</span>(<span class="num">245,166,35,0.35</span>);
+}
+<span class="fn">.btn-primary:focus-visible</span> {
+  <span class="prop">outline</span>: <span class="num">3px</span> solid <span class="fn">rgba</span>(<span class="num">245,166,35,0.5</span>);
+  <span class="prop">outline-offset</span>: <span class="num">2px</span>;
+}
+<span class="fn">.btn-primary:disabled</span> {
+  <span class="prop">opacity</span>: <span class="num">0.4</span>;
+  <span class="prop">cursor</span>: <span class="kw">not-allowed</span>;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Button Size Variants</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Size</th><th>Padding</th><th>Font Size</th><th>Use case</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Small</strong></td><td><code>8px 16px</code></td><td><code>13px</code></td><td>Badge actions, compact UI</td></tr>
+            <tr><td><strong>Medium (default)</strong></td><td><code>12px 28px</code></td><td><code>15px</code></td><td>Standard page CTAs</td></tr>
+            <tr><td><strong>Large</strong></td><td><code>16px 36px</code></td><td><code>17px</code></td><td>Hero CTAs, primary page action</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 8 — FORMS
+  ════════════════════════════════════════ -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <div class="section-number">Section 08</div>
+      <h2 class="section-title">Form &amp; Input Styling</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Live Form Preview</h3>
+      <div class="form-demo">
+        <div class="form-group">
+          <label class="form-label">Full Name <span class="req">*</span></label>
+          <input class="form-input" type="text" placeholder="e.g. John Smith">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address <span class="req">*</span></label>
+          <input class="form-input is-success" type="email" value="john@company.com">
+          <div class="form-success-msg">✓ Valid email address</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input is-error" type="tel" placeholder="+1 (555) 000-0000" value="abc123">
+          <div class="form-error-msg">✕ Please enter a valid phone number</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Brief About Your Project</label>
+          <textarea class="form-input" placeholder="Tell us about your requirements..."></textarea>
+          <div class="form-helper">Maximum 500 characters</div>
+        </div>
+        <button class="btn btn-primary-live btn-md" style="width:100%;justify-content:center">Request Consultation</button>
+        <div style="text-align:center;font-size:12px;color:var(--color-gray-500);margin-top:10px">✓ 100% Guaranteed Security of Your Information</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Input Field Spec</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Property</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Height</td><td><code>48px</code></td></tr>
+            <tr><td>Padding</td><td><code>12px 16px</code></td></tr>
+            <tr><td>Border</td><td><code>1.5px solid #E5E7EB</code></td></tr>
+            <tr><td>Border Radius</td><td><code>6px</code></td></tr>
+            <tr><td>Font Size</td><td><code>15px</code></td></tr>
+            <tr><td>Placeholder Color</td><td><code>#9CA3AF</code></td></tr>
+            <tr><td>Focus Border</td><td><code>1.5px solid #1A4F9C</code></td></tr>
+            <tr><td>Focus Shadow</td><td><code>0 0 0 3px rgba(26,79,156,0.15)</code></td></tr>
+            <tr><td>Error Border</td><td><code>1.5px solid #EF4444</code></td></tr>
+            <tr><td>Success Border</td><td><code>1.5px solid #10B981</code></td></tr>
+            <tr><td>Disabled BG</td><td><code>#F9FAFB</code>, cursor <code>not-allowed</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Form Layout Best Practices</h3>
+      <ul>
+        <li>Single-column for short forms (contact, consultation)</li>
+        <li>Two-column grids for longer forms on desktop; collapse to single on mobile</li>
+        <li>Always use visible labels — never placeholder-as-label</li>
+        <li>Required fields marked with <strong>*</strong> and a top-of-form note</li>
+        <li>Submit button aligned left in single-column layouts</li>
+        <li>Security message below submit button</li>
+        <li><code>16px</code> gap between each field group</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 9 — CARDS
+  ════════════════════════════════════════ -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <div class="section-number">Section 09</div>
+      <h2 class="section-title">Cards &amp; Containers</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Service Card — Live Preview (hover me)</h3>
+      <div class="card-grid">
+        <div class="card-demo">
+          <div class="card-icon-wrap">⚙️</div>
+          <h4>Product Development</h4>
+          <p>End-to-end software product engineering — from architecture to delivery, built for scale.</p>
+          <a class="card-link">Explore More →</a>
+        </div>
+        <div class="card-demo">
+          <div class="card-icon-wrap" style="background:#e0f7fa">🤖</div>
+          <h4>AI Solutions</h4>
+          <p>Machine learning, generative AI, and intelligent automation tailored to your business needs.</p>
+          <a class="card-link">Explore More →</a>
+        </div>
+        <div class="card-demo">
+          <div class="card-icon-wrap" style="background:#fff3e0">☁️</div>
+          <h4>CloudOps &amp; DevOps</h4>
+          <p>Infrastructure automation, CI/CD pipelines, and cloud-native architecture at enterprise scale.</p>
+          <a class="card-link">Explore More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Base Card Spec</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Property</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Background</td><td><code>#FFFFFF</code></td></tr>
+            <tr><td>Border</td><td><code>1px solid #E5E7EB</code></td></tr>
+            <tr><td>Border Radius</td><td><code>12px</code></td></tr>
+            <tr><td>Box Shadow</td><td><code>0 2px 12px rgba(0,0,0,0.06)</code></td></tr>
+            <tr><td>Padding</td><td><code>24px</code></td></tr>
+            <tr><td>Hover Shadow</td><td><code>0 8px 32px rgba(0,0,0,0.12)</code></td></tr>
+            <tr><td>Hover Transform</td><td><code>translateY(-4px)</code></td></tr>
+            <tr><td>Transition</td><td><code>box-shadow 0.25s ease, transform 0.25s ease</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Testimonial Card — Live Preview</h3>
+      <div class="card-grid">
+        <div class="card-demo" style="background:var(--color-navy);border-color:rgba(255,255,255,.1)">
+          <div style="font-size:40px;color:var(--color-accent);line-height:1;margin-bottom:12px">"</div>
+          <p style="font-size:15px;font-style:italic;color:rgba(255,255,255,.85);line-height:1.7">Biztech has been a game-changing technology partner. Their team delivered exactly what we needed, on time and on budget.</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:16px">
+            <div style="width:44px;height:44px;border-radius:50%;background:var(--color-accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-navy);font-size:14px">JS</div>
+            <div><div style="font-size:14px;font-weight:600;color:#fff">James S.</div><div style="font-size:12px;color:rgba(255,255,255,.5)">CTO, RetailCo</div></div>
+          </div>
+        </div>
+        <div class="card-demo">
+          <div style="font-size:40px;color:var(--color-accent);line-height:1;margin-bottom:12px">"</div>
+          <p style="font-size:15px;font-style:italic;color:var(--color-gray-700);line-height:1.7">The product they built scaled from 0 to 50k users without a hitch. Their proactive communication made the whole process smooth.</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:16px">
+            <div style="width:44px;height:44px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px">AM</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--color-charcoal)">Aisha M.</div><div style="font-size:12px;color:var(--color-gray-500)">Founder, HealthTech</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 10 — NAVIGATION
+  ════════════════════════════════════════ -->
+  <section class="section" id="s10">
+    <div class="section-header">
+      <div class="section-number">Section 10</div>
+      <h2 class="section-title">Navigation Guidelines</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Header — Live Preview</h3>
+      <div style="background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;margin:12px 0">
+        <div style="height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--color-border)">
+          <div class="logo-text" style="font-size:18px"><span class="biz">Biztech</span><span class="tech">CS</span></div>
+          <div style="display:flex;gap:4px">
+            <a style="padding:7px 14px;font-size:14px;font-weight:500;color:var(--color-charcoal);text-decoration:none;border-radius:4px">Services</a>
+            <a style="padding:7px 14px;font-size:14px;font-weight:500;color:var(--color-charcoal);text-decoration:none;border-radius:4px">Industries</a>
+            <a style="padding:7px 14px;font-size:14px;font-weight:500;color:var(--color-primary);text-decoration:none;border-radius:4px;border-bottom:2px solid var(--color-accent)">Our Work</a>
+            <a style="padding:7px 14px;font-size:14px;font-weight:500;color:var(--color-charcoal);text-decoration:none;border-radius:4px">About</a>
+          </div>
+          <a class="btn btn-primary-live" style="padding:9px 20px;font-size:13px">Talk to Experts</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Nav Link States</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="fn">.nav-link</span> {
+  <span class="prop">color</span>: <span class="fn">var</span>(<span class="str">--color-text-primary</span>);
+  <span class="prop">font-size</span>: <span class="num">15px</span>;
+  <span class="prop">font-weight</span>: <span class="num">500</span>;
+  <span class="prop">padding</span>: <span class="num">8px 16px</span>;
+  <span class="prop">text-decoration</span>: <span class="kw">none</span>;
+  <span class="prop">border-bottom</span>: <span class="num">2px</span> solid <span class="kw">transparent</span>;
+  <span class="prop">transition</span>: color <span class="num">0.15s</span> ease;
+}
+<span class="fn">.nav-link:hover</span> { <span class="prop">color</span>: <span class="fn">var</span>(<span class="str">--color-primary</span>); }
+<span class="fn">.nav-link.active</span> {
+  <span class="prop">color</span>: <span class="fn">var</span>(<span class="str">--color-primary</span>);
+  <span class="prop">border-bottom-color</span>: <span class="fn">var</span>(<span class="str">--color-accent</span>);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Navigation Specs</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Element</th><th>Spec</th></tr></thead>
+          <tbody>
+            <tr><td>Header height</td><td><code>72px</code> desktop / <code>60px</code> mobile</td></tr>
+            <tr><td>Nav font</td><td><code>15px</code>, weight <code>500</code>, color <code>#1E2532</code></td></tr>
+            <tr><td>Active indicator</td><td><code>2px solid #F5A623</code> bottom border</td></tr>
+            <tr><td>Dropdown shadow</td><td><code>0 16px 48px rgba(0,0,0,0.12)</code></td></tr>
+            <tr><td>Dropdown border-top</td><td><code>3px solid #1A4F9C</code></td></tr>
+            <tr><td>Sticky z-index</td><td><code>200</code></td></tr>
+            <tr><td>Mobile nav BG</td><td><code>#0B1F3A</code> (brand navy)</td></tr>
+            <tr><td>Footer link color</td><td><code>rgba(255,255,255,0.65)</code> → hover <code>#fff</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 11 — ICONOGRAPHY
+  ════════════════════════════════════════ -->
+  <section class="section" id="s11">
+    <div class="section-header">
+      <div class="section-number">Section 11</div>
+      <h2 class="section-title">Iconography</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Icon Style</h3>
+      <p>BiztechCS uses <strong>custom flat/outlined SVG icons</strong> — line/outline style with selective fills for emphasis. Stroke width is <strong>1.5px</strong> throughout for visual consistency.</p>
+    </div>
+
+    <div class="subsection">
+      <h3>Icon Sizes</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;padding:24px;background:var(--color-gray-50);border-radius:var(--radius-md);margin:12px 0">
+        <div style="text-align:center"><div style="width:16px;height:16px;background:var(--color-primary);border-radius:3px;margin:0 auto"></div><div style="font-size:11px;color:var(--color-gray-500);margin-top:6px">16px<br>Inline</div></div>
+        <div style="text-align:center"><div style="width:18px;height:18px;background:var(--color-primary);border-radius:3px;margin:0 auto"></div><div style="font-size:11px;color:var(--color-gray-500);margin-top:6px">18px<br>Button</div></div>
+        <div style="text-align:center"><div style="width:24px;height:24px;background:var(--color-primary);border-radius:4px;margin:0 auto"></div><div style="font-size:11px;color:var(--color-gray-500);margin-top:6px">24px<br>Small card</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:var(--color-primary);border-radius:6px;margin:0 auto"></div><div style="font-size:11px;color:var(--color-gray-500);margin-top:6px">32px<br>Service icon</div></div>
+        <div style="text-align:center"><div style="width:48px;height:48px;background:var(--color-primary);border-radius:8px;margin:0 auto"></div><div style="font-size:11px;color:var(--color-gray-500);margin-top:6px">48px<br>Feature</div></div>
+        <div style="text-align:center"><div style="width:64px;height:64px;background:var(--color-primary);border-radius:10px;margin:0 auto"></div><div style="font-size:11px;color:var(--color-gray-500);margin-top:6px">64px<br>Hero deco</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Icon Colors</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Context</th><th>Color</th></tr></thead>
+          <tbody>
+            <tr><td>Default UI icons</td><td><code>#6B7280</code> medium gray</td></tr>
+            <tr><td>Service icons on white card</td><td><code>#1A4F9C</code> brand blue</td></tr>
+            <tr><td>Service icons on blue BG</td><td><code>#FFFFFF</code></td></tr>
+            <tr><td>Accent / highlight icons</td><td><code>#F5A623</code> brand yellow</td></tr>
+            <tr><td>Success icons</td><td><code>#10B981</code></td></tr>
+            <tr><td>Error icons</td><td><code>#EF4444</code></td></tr>
+            <tr><td>Footer icons</td><td><code>rgba(255,255,255,0.7)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 12 — IMAGERY
+  ════════════════════════════════════════ -->
+  <section class="section" id="s12">
+    <div class="section-header">
+      <div class="section-number">Section 12</div>
+      <h2 class="section-title">Imagery &amp; Illustration Style</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Photography Style</h3>
+      <ul>
+        <li><strong>Subject:</strong> Real professionals in modern office environments; diverse, global teams</li>
+        <li><strong>Mood:</strong> Bright, clean, optimistic — no dark or moody treatments</li>
+        <li><strong>Color treatment:</strong> Natural, slightly warm-shifted; avoid over-saturated images</li>
+        <li><strong>Composition:</strong> Subject centered or rule-of-thirds; avoid busy backgrounds</li>
+        <li><strong>People:</strong> Candid over posed; authentic collaboration scenes preferred</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>Illustration Style</h3>
+      <ul>
+        <li><strong>Type:</strong> Flat vector with subtle depth (isometric or 2.5D for complex scenes)</li>
+        <li><strong>Colors:</strong> Drawn from brand palette — navy, blue, yellow, teal accents</li>
+        <li><strong>Characters:</strong> Simple, geometric, diverse, gender-neutral where possible</li>
+        <li><strong>Complexity:</strong> Medium detail — more than basic flat icons, less than realistic 3D</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>Gradient Tokens — Live Preview</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:12px 0">
+        <div style="height:80px;border-radius:10px;background:linear-gradient(135deg,rgba(11,31,58,.85) 0%,rgba(26,79,156,.5) 100%);display:flex;align-items:flex-end;padding:10px"><span style="font-size:11px;color:rgba(255,255,255,.7)">Hero Overlay</span></div>
+        <div style="height:80px;border-radius:10px;background:linear-gradient(135deg,#0B1F3A 0%,#1A4F9C 100%);display:flex;align-items:flex-end;padding:10px"><span style="font-size:11px;color:rgba(255,255,255,.7)">Section Accent</span></div>
+        <div style="height:80px;border-radius:10px;background:linear-gradient(135deg,#F5A623 0%,#F47C20 100%);display:flex;align-items:flex-end;padding:10px"><span style="font-size:11px;color:rgba(0,0,0,.5)">CTA Gradient</span></div>
+        <div style="height:80px;border-radius:10px;background:linear-gradient(180deg,transparent 60%,rgba(11,31,58,.7) 100%),#c7d2e8;display:flex;align-items:flex-end;padding:10px"><span style="font-size:11px;color:rgba(255,255,255,.9)">Card Hover Tint</span></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Imagery Do's and Don'ts</h3>
+      <div class="do-dont">
+        <div class="do-box">
+          <h5>✓ Do</h5>
+          <ul>
+            <li>Use consistent color grading across sections</li>
+            <li>Crop to highlight the focal point</li>
+            <li>Use proper alt text on all images</li>
+            <li>Maintain consistent aspect ratios within a component</li>
+            <li>Use WebP format with JPG fallback</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h5>✕ Don't</h5>
+          <ul>
+            <li>Use clip art or generic stock photography</li>
+            <li>Mix photography and cartoon styles in the same section</li>
+            <li>Use watermarked or low-res images</li>
+            <li>Use images where text competes with background without a scrim</li>
+            <li>Use placeholder device frame mockups</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 13 — UI COMPONENTS
+  ════════════════════════════════════════ -->
+  <section class="section" id="s13">
+    <div class="section-header">
+      <div class="section-number">Section 13</div>
+      <h2 class="section-title">UI Components</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Badges &amp; Tags — Live Preview</h3>
+      <div class="badge-row">
+        <span class="badge badge-blue">Product Dev</span>
+        <span class="badge badge-gray">Technology</span>
+        <span class="badge badge-orange">Manufacturing</span>
+        <span class="badge badge-green">✓ Completed</span>
+        <span class="badge badge-teal">AI / ML</span>
+      </div>
+      <div class="badge-row">
+        <span class="badge badge-pill badge-blue">Product Dev</span>
+        <span class="badge badge-pill badge-gray">Technology</span>
+        <span class="badge badge-pill badge-orange">Healthcare</span>
+        <span class="badge badge-pill badge-green">✓ Success</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Alert / Banner Components — Live Preview</h3>
+      <div class="alert alert-info"><span class="alert-icon">ℹ</span><div>New services added — explore our AI Solutions and CloudOps offerings.</div></div>
+      <div class="alert alert-success"><span class="alert-icon">✓</span><div>Your consultation request has been submitted. We'll respond within 24 hours.</div></div>
+      <div class="alert alert-warning"><span class="alert-icon">⚠</span><div>Scheduled maintenance on June 15 — some services may be temporarily unavailable.</div></div>
+      <div class="alert alert-error"><span class="alert-icon">✕</span><div>Failed to submit form. Please check required fields and try again.</div></div>
+    </div>
+
+    <div class="subsection">
+      <h3>CTA Banner — Live Preview</h3>
+      <div style="background:var(--color-navy);border-radius:var(--radius-lg);padding:48px 40px;text-align:center;margin:12px 0">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent);margin-bottom:12px">Ready to Get Started?</div>
+        <div style="font-family:var(--font-heading);font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;margin-bottom:12px">Build Something Remarkable Together</div>
+        <div style="font-size:16px;color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 28px">Talk to our experts and discover how Biztech can accelerate your digital transformation.</div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary-live btn-lg">Talk to Experts</a>
+          <a class="btn btn-outline-inv btn-lg">View Case Studies</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Tabs — Live Preview</h3>
+      <div style="border-bottom:1px solid var(--color-border);display:flex;gap:0;margin:12px 0 0" id="tabbar">
+        <button onclick="setTab(0)" class="tab-btn active" style="padding:10px 20px;font-size:14px;font-weight:500;border:none;background:none;cursor:pointer;color:var(--color-primary);border-bottom:2px solid var(--color-primary);margin-bottom:-1px">Product Dev</button>
+        <button onclick="setTab(1)" class="tab-btn" style="padding:10px 20px;font-size:14px;font-weight:500;border:none;background:none;cursor:pointer;color:var(--color-gray-500);border-bottom:2px solid transparent;margin-bottom:-1px">AI Solutions</button>
+        <button onclick="setTab(2)" class="tab-btn" style="padding:10px 20px;font-size:14px;font-weight:500;border:none;background:none;cursor:pointer;color:var(--color-gray-500);border-bottom:2px solid transparent;margin-bottom:-1px">CloudOps</button>
+        <button onclick="setTab(3)" class="tab-btn" style="padding:10px 20px;font-size:14px;font-weight:500;border:none;background:none;cursor:pointer;color:var(--color-gray-500);border-bottom:2px solid transparent;margin-bottom:-1px">Ecommerce</button>
+      </div>
+      <div style="padding:20px;background:var(--color-gray-50);border-radius:0 0 var(--radius-md) var(--radius-md);border:1px solid var(--color-border);border-top:none" id="tabcontent">
+        <p style="margin:0;font-size:14px;color:var(--color-gray-700)">Full-stack software product engineering from architecture to delivery — web apps, mobile, APIs, and integrations built for scale.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Accordion — Live Preview</h3>
+      <div style="margin:12px 0">
+        <div style="border:1px solid var(--color-border);border-radius:8px;overflow:hidden">
+          <button onclick="toggleAccordion(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:15px;font-weight:600;color:var(--color-charcoal);background:#fff;border:none;cursor:pointer;text-align:left">
+            What technologies does Biztech specialize in?
+            <span style="font-size:18px;transition:transform .3s ease;display:inline-block">›</span>
+          </button>
+          <div style="padding:0 20px 16px;font-size:14px;color:var(--color-gray-700);line-height:1.7">
+            Biztech covers 9+ technology stacks including React, Angular, Node.js, Python, AWS, Azure, Salesforce, Odoo, and more. Our teams specialize across web, mobile, cloud, and enterprise applications.
+          </div>
+        </div>
+        <div style="border:1px solid var(--color-border);border-radius:8px;overflow:hidden;margin-top:8px">
+          <button onclick="toggleAccordion(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:15px;font-weight:600;color:var(--color-charcoal);background:#fff;border:none;cursor:pointer;text-align:left">
+            How does the engagement model work?
+            <span style="font-size:18px;transition:transform .3s ease;display:inline-block">›</span>
+          </button>
+          <div style="display:none;padding:0 20px 16px;font-size:14px;color:var(--color-gray-700);line-height:1.7">
+            We offer three primary models: Fixed-price for well-defined projects, Time &amp; Material for evolving scope, and Dedicated Teams for ongoing product development or staff augmentation.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Pagination — Live Preview</h3>
+      <div style="display:flex;gap:6px;align-items:center;margin:12px 0">
+        <button style="width:36px;height:36px;border:1px solid var(--color-border);border-radius:6px;background:#fff;cursor:pointer;font-size:14px;color:var(--color-charcoal)">‹</button>
+        <button style="width:36px;height:36px;border:none;border-radius:6px;background:var(--color-primary);color:#fff;cursor:pointer;font-size:14px;font-weight:600">1</button>
+        <button style="width:36px;height:36px;border:1px solid var(--color-border);border-radius:6px;background:#fff;cursor:pointer;font-size:14px;color:var(--color-charcoal)">2</button>
+        <button style="width:36px;height:36px;border:1px solid var(--color-border);border-radius:6px;background:#fff;cursor:pointer;font-size:14px;color:var(--color-charcoal)">3</button>
+        <span style="font-size:14px;color:var(--color-gray-500);padding:0 4px">...</span>
+        <button style="width:36px;height:36px;border:1px solid var(--color-border);border-radius:6px;background:#fff;cursor:pointer;font-size:14px;color:var(--color-charcoal)">9</button>
+        <button style="width:36px;height:36px;border:1px solid var(--color-border);border-radius:6px;background:#fff;cursor:pointer;font-size:14px;color:var(--color-charcoal)">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 14 — MOTION
+  ════════════════════════════════════════ -->
+  <section class="section" id="s14">
+    <div class="section-header">
+      <div class="section-number">Section 14</div>
+      <h2 class="section-title">Interaction &amp; Motion Guidelines</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Core Principles</h3>
+      <ul>
+        <li><strong>Purposeful</strong> — Every animation communicates state or guides attention; no decorative motion</li>
+        <li><strong>Subtle</strong> — Transforms are small (4px lift, not 20px); durations are short</li>
+        <li><strong>Consistent</strong> — Same easing and duration across equivalent interactions</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>Standard Timing Reference</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Interaction</th><th>Duration</th><th>Easing</th></tr></thead>
+          <tbody>
+            <tr><td>Button hover</td><td><code>200ms</code></td><td><code>ease</code></td></tr>
+            <tr><td>Link color</td><td><code>150ms</code></td><td><code>ease</code></td></tr>
+            <tr><td>Card hover lift</td><td><code>250ms</code></td><td><code>ease</code></td></tr>
+            <tr><td>Dropdown open</td><td><code>200ms</code></td><td><code>ease-out</code></td></tr>
+            <tr><td>Modal open</td><td><code>250ms</code></td><td><code>ease</code></td></tr>
+            <tr><td>Accordion expand</td><td><code>300ms</code></td><td><code>ease-in-out</code></td></tr>
+            <tr><td>Scroll reveal</td><td><code>600ms</code></td><td><code>cubic-bezier(0.16,1,0.3,1)</code></td></tr>
+            <tr><td>Stat counter</td><td><code>2000ms</code></td><td><code>ease-out</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Animation Code Patterns</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">/* Card hover lift */</span>
+<span class="fn">.card</span> { <span class="prop">transition</span>: transform <span class="num">0.25s</span> ease, box-shadow <span class="num">0.25s</span> ease; }
+<span class="fn">.card:hover</span> { <span class="prop">transform</span>: <span class="fn">translateY</span>(<span class="num">-4px</span>); <span class="prop">box-shadow</span>: <span class="fn">var</span>(<span class="str">--shadow-lg</span>); }
+
+<span class="cm">/* Arrow slide (Explore More →) */</span>
+<span class="fn">.btn-text .arrow</span> { <span class="prop">transition</span>: transform <span class="num">0.2s</span> ease; }
+<span class="fn">.btn-text:hover .arrow</span> { <span class="prop">transform</span>: <span class="fn">translateX</span>(<span class="num">4px</span>); }
+
+<span class="cm">/* Scroll reveal */</span>
+<span class="fn">.reveal</span> { <span class="prop">opacity</span>: <span class="num">0</span>; <span class="prop">transform</span>: <span class="fn">translateY</span>(<span class="num">24px</span>); <span class="prop">transition</span>: opacity <span class="num">0.6s</span> <span class="fn">cubic-bezier</span>(<span class="num">0.16,1,0.3,1</span>), transform <span class="num">0.6s</span> <span class="fn">cubic-bezier</span>(<span class="num">0.16,1,0.3,1</span>); }
+<span class="fn">.reveal.visible</span> { <span class="prop">opacity</span>: <span class="num">1</span>; <span class="prop">transform</span>: <span class="fn">translateY</span>(<span class="num">0</span>); }
+
+<span class="cm">/* Reduced motion */</span>
+<span class="kw">@media</span> (prefers-reduced-motion: reduce) {
+  <span class="fn">*, *::before, *::after</span> {
+    <span class="prop">animation-duration</span>: <span class="num">0.01ms</span> <span class="kw">!important</span>;
+    <span class="prop">transition-duration</span>: <span class="num">0.01ms</span> <span class="kw">!important</span>;
+  }
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 15 — ACCESSIBILITY
+  ════════════════════════════════════════ -->
+  <section class="section" id="s15">
+    <div class="section-header">
+      <div class="section-number">Section 15</div>
+      <h2 class="section-title">Accessibility Guidelines</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Color Contrast (WCAG 2.1 AA)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text type</th><th>Minimum ratio</th></tr></thead>
+          <tbody>
+            <tr><td>Normal text (&lt; 18px)</td><td><code>4.5:1</code></td></tr>
+            <tr><td>Large text (≥ 18px bold / ≥ 24px)</td><td><code>3:1</code></td></tr>
+            <tr><td>UI components &amp; icons</td><td><code>3:1</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-success">
+        <strong>✓ Passes:</strong> White on #1A4F9C blue · #1E2532 on white (AAA) · #F5A623 yellow on #0B1F3A navy
+      </div>
+      <div class="callout" style="background:#fef2f2;border-color:var(--color-error)">
+        <strong>✕ Fails:</strong> Yellow <code>#F5A623</code> text on white background — never use this combination.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Focus States</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">/* Never remove outline without a replacement */</span>
+<span class="fn">:focus-visible</span> {
+  <span class="prop">outline</span>: <span class="num">3px</span> solid <span class="str">#1A4F9C</span>;
+  <span class="prop">outline-offset</span>: <span class="num">2px</span>;
+  <span class="prop">border-radius</span>: <span class="num">2px</span>;
+}
+<span class="cm">/* On dark backgrounds */</span>
+<span class="fn">.dark :focus-visible</span> { <span class="prop">outline-color</span>: <span class="str">#F5A623</span>; }</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>ARIA Patterns</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">HTML</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">&lt;!-- Navigation --&gt;</span>
+&lt;<span class="kw">nav</span> <span class="prop">aria-label</span>=<span class="str">"Main navigation"</span>&gt;
+
+<span class="cm">&lt;!-- Mobile menu toggle --&gt;</span>
+&lt;<span class="kw">button</span> <span class="prop">aria-expanded</span>=<span class="str">"false"</span> <span class="prop">aria-controls</span>=<span class="str">"mobile-menu"</span>&gt;
+
+<span class="cm">&lt;!-- Accordion --&gt;</span>
+&lt;<span class="kw">button</span> <span class="prop">aria-expanded</span>=<span class="str">"false"</span> <span class="prop">aria-controls</span>=<span class="str">"panel-1"</span>&gt;
+
+<span class="cm">&lt;!-- Alert --&gt;</span>
+&lt;<span class="kw">div</span> <span class="prop">role</span>=<span class="str">"alert"</span> <span class="prop">aria-live</span>=<span class="str">"polite"</span>&gt;
+
+<span class="cm">&lt;!-- Loading spinner --&gt;</span>
+&lt;<span class="kw">div</span> <span class="prop">role</span>=<span class="str">"status"</span> <span class="prop">aria-label</span>=<span class="str">"Loading..."</span>&gt;
+
+<span class="cm">&lt;!-- Form error --&gt;</span>
+&lt;<span class="kw">input</span> <span class="prop">aria-describedby</span>=<span class="str">"email-error"</span> <span class="prop">aria-invalid</span>=<span class="str">"true"</span>&gt;
+&lt;<span class="kw">span</span> <span class="prop">id</span>=<span class="str">"email-error"</span> <span class="prop">role</span>=<span class="str">"alert"</span>&gt;Invalid email address&lt;/<span class="kw">span</span>&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Key Accessibility Rules</h3>
+      <ul>
+        <li>Minimum body font size: <code>14px</code> — never smaller for flowing copy</li>
+        <li>Maximum line length: <code>70ch</code> for paragraph text</li>
+        <li>All <code>&lt;img&gt;</code> must have <code>alt</code> text; decorative images use <code>alt=""</code></li>
+        <li>All buttons need visible text or <code>aria-label</code></li>
+        <li>Links must make sense out of context — avoid "click here" as standalone</li>
+        <li>Use <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code> for radio/checkbox groups</li>
+        <li>Skip-to-content link at page top (visually hidden until focused)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 16 — CONTENT STYLE GUIDE
+  ════════════════════════════════════════ -->
+  <section class="section" id="s16">
+    <div class="section-header">
+      <div class="section-number">Section 16</div>
+      <h2 class="section-title">Content Style Guide</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Brand Voice Attributes</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Confident</strong></td><td>Own your expertise</td><td>"We deliver." not "We try to deliver."</td></tr>
+            <tr><td><strong>Outcome-first</strong></td><td>Lead with what the client gains</td><td>"Scale faster" not "We offer cloud services"</td></tr>
+            <tr><td><strong>Credible</strong></td><td>Back claims with data</td><td>"98% of clients stay — here's why"</td></tr>
+            <tr><td><strong>Human</strong></td><td>Avoid cold corporate-speak</td><td>"Let's talk" not "Initiate a consultation"</td></tr>
+            <tr><td><strong>Precise</strong></td><td>Say it once, say it right</td><td>No padding, no filler sentences</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>CTA Wording Reference</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Context</th><th>Preferred Wording</th></tr></thead>
+          <tbody>
+            <tr><td>Primary page CTA</td><td>"Talk to Experts", "Get Started", "Book a Free Call"</td></tr>
+            <tr><td>Service exploration</td><td>"Explore [Service Name]", "See How It Works"</td></tr>
+            <tr><td>Case study</td><td>"Read the Full Case Study"</td></tr>
+            <tr><td>Blog</td><td>"Read Article"</td></tr>
+            <tr><td>Form submit</td><td>"Request Consultation", "Send Message"</td></tr>
+            <tr><td>Hire section</td><td>"Hire [Role]", "Get a Quote"</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="background:#fef2f2;border-color:var(--color-error)">
+        <strong>Avoid:</strong> "Submit", "Click here", "Learn More" (generic without context), "See More" without specificity
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Grammar &amp; Style Rules</h3>
+      <ul>
+        <li><strong>Sentence case</strong> for headings and subheadings (not Title Case for everything)</li>
+        <li>Use <strong>Oxford comma</strong> in lists</li>
+        <li>Use <strong>active voice</strong> — "We built a platform" not "A platform was built by us"</li>
+        <li>Spell out one–nine; use numerals for 10+</li>
+        <li>Use "+" for stat callouts: "19+", "1,300+" — not "more than 19"</li>
+        <li>American English: "optimize" not "optimise"</li>
+        <li>Spell out acronyms on first use: "Customer Relationship Management (CRM)"</li>
+        <li>No exclamation marks in body copy — only acceptable in friendly UI microcopy</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>Content Do's and Don'ts</h3>
+      <div class="do-dont">
+        <div class="do-box">
+          <h5>✓ Do</h5>
+          <ul>
+            <li>Start with the reader's problem or goal</li>
+            <li>Use short sentences for clarity</li>
+            <li>Include specific numbers and proof points</li>
+            <li>End sections with a clear next step</li>
+            <li>Use real client names and metrics in case studies</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h5>✕ Don't</h5>
+          <ul>
+            <li>Use buzzword chains: "synergistic end-to-end agile solutions"</li>
+            <li>Over-qualify: "potentially," "might possibly"</li>
+            <li>Start too many consecutive sentences with "We"</li>
+            <li>Lead with company history instead of client benefit</li>
+            <li>End pages without a CTA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 17 — DESIGN TOKENS
+  ════════════════════════════════════════ -->
+  <section class="section" id="s17">
+    <div class="section-header">
+      <div class="section-number">Section 17</div>
+      <h2 class="section-title">Design Tokens</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Complete CSS Variables Reference</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="fn">:root</span> {
+  <span class="cm">/* ── COLORS — Primary ── */</span>
+  <span class="prop">--color-navy</span>:           <span class="str">#0B1F3A</span>;
+  <span class="prop">--color-primary</span>:        <span class="str">#1A4F9C</span>;
+  <span class="prop">--color-accent</span>:         <span class="str">#F5A623</span>;
+  <span class="prop">--color-teal</span>:           <span class="str">#00B4D8</span>;
+
+  <span class="cm">/* ── COLORS — Neutral ── */</span>
+  <span class="prop">--color-charcoal</span>:       <span class="str">#1E2532</span>;
+  <span class="prop">--color-gray-700</span>:       <span class="str">#3D4354</span>;
+  <span class="prop">--color-gray-500</span>:       <span class="str">#6B7280</span>;
+  <span class="prop">--color-gray-300</span>:       <span class="str">#D1D5DB</span>;
+  <span class="prop">--color-gray-100</span>:       <span class="str">#F3F4F6</span>;
+  <span class="prop">--color-gray-50</span>:        <span class="str">#F9FAFB</span>;
+
+  <span class="cm">/* ── COLORS — Background ── */</span>
+  <span class="prop">--color-bg</span>:             <span class="str">#FFFFFF</span>;
+  <span class="prop">--color-bg-alt</span>:         <span class="str">#F9FAFB</span>;
+  <span class="prop">--color-bg-section</span>:     <span class="str">#F3F4F6</span>;
+  <span class="prop">--color-bg-dark</span>:        <span class="str">#0B1F3A</span>;
+
+  <span class="cm">/* ── COLORS — Text ── */</span>
+  <span class="prop">--color-text-primary</span>:   <span class="str">#1E2532</span>;
+  <span class="prop">--color-text-secondary</span>: <span class="str">#3D4354</span>;
+  <span class="prop">--color-text-muted</span>:     <span class="str">#6B7280</span>;
+  <span class="prop">--color-text-inverted</span>:  <span class="str">#FFFFFF</span>;
+  <span class="prop">--color-text-link</span>:      <span class="str">#1A4F9C</span>;
+  <span class="prop">--color-text-link-hover</span>:<span class="str">#F5A623</span>;
+
+  <span class="cm">/* ── COLORS — Border ── */</span>
+  <span class="prop">--color-border</span>:         <span class="str">#E5E7EB</span>;
+  <span class="prop">--color-border-focus</span>:   <span class="str">#1A4F9C</span>;
+  <span class="prop">--color-border-error</span>:   <span class="str">#EF4444</span>;
+  <span class="prop">--color-border-success</span>: <span class="str">#10B981</span>;
+
+  <span class="cm">/* ── COLORS — Semantic ── */</span>
+  <span class="prop">--color-success</span>:        <span class="str">#10B981</span>;
+  <span class="prop">--color-success-bg</span>:     <span class="str">#ECFDF5</span>;
+  <span class="prop">--color-warning</span>:        <span class="str">#F59E0B</span>;
+  <span class="prop">--color-warning-bg</span>:     <span class="str">#FFFBEB</span>;
+  <span class="prop">--color-error</span>:          <span class="str">#EF4444</span>;
+  <span class="prop">--color-error-bg</span>:       <span class="str">#FEF2F2</span>;
+  <span class="prop">--color-info</span>:           <span class="str">#3B82F6</span>;
+  <span class="prop">--color-info-bg</span>:        <span class="str">#EFF6FF</span>;
+
+  <span class="cm">/* ── TYPOGRAPHY ── */</span>
+  <span class="prop">--font-heading</span>: <span class="str">"Poppins"</span>, <span class="str">"Segoe UI"</span>, <span class="str">"Helvetica Neue"</span>, Arial, sans-serif;
+  <span class="prop">--font-body</span>:    <span class="str">"Inter"</span>,   <span class="str">"Segoe UI"</span>, <span class="str">"Helvetica Neue"</span>, Arial, sans-serif;
+  <span class="prop">--font-mono</span>:    <span class="str">"JetBrains Mono"</span>, <span class="str">"Fira Code"</span>, monospace;
+
+  <span class="cm">/* ── TYPE SCALE ── */</span>
+  <span class="prop">--text-xs</span>:   <span class="num">0.75rem</span>;   <span class="cm">/* 12px */</span>
+  <span class="prop">--text-sm</span>:   <span class="num">0.875rem</span>;  <span class="cm">/* 14px */</span>
+  <span class="prop">--text-base</span>: <span class="num">1rem</span>;      <span class="cm">/* 16px */</span>
+  <span class="prop">--text-lg</span>:   <span class="num">1.125rem</span>;  <span class="cm">/* 18px */</span>
+  <span class="prop">--text-xl</span>:   <span class="num">1.375rem</span>;  <span class="cm">/* 22px */</span>
+  <span class="prop">--text-2xl</span>:  <span class="num">1.75rem</span>;   <span class="cm">/* 28px */</span>
+  <span class="prop">--text-3xl</span>:  <span class="num">2.5rem</span>;    <span class="cm">/* 40px */</span>
+  <span class="prop">--text-4xl</span>:  <span class="num">3.5rem</span>;    <span class="cm">/* 56px */</span>
+
+  <span class="cm">/* ── FONT WEIGHTS ── */</span>
+  <span class="prop">--font-regular</span>:   <span class="num">400</span>;
+  <span class="prop">--font-medium</span>:    <span class="num">500</span>;
+  <span class="prop">--font-semibold</span>:  <span class="num">600</span>;
+  <span class="prop">--font-bold</span>:      <span class="num">700</span>;
+  <span class="prop">--font-extrabold</span>: <span class="num">800</span>;
+
+  <span class="cm">/* ── SPACING (8px base) ── */</span>
+  <span class="prop">--space-1</span>:  <span class="num">0.25rem</span>;  <span class="cm">/* 4px  */</span>
+  <span class="prop">--space-2</span>:  <span class="num">0.5rem</span>;   <span class="cm">/* 8px  */</span>
+  <span class="prop">--space-3</span>:  <span class="num">0.75rem</span>;  <span class="cm">/* 12px */</span>
+  <span class="prop">--space-4</span>:  <span class="num">1rem</span>;     <span class="cm">/* 16px */</span>
+  <span class="prop">--space-6</span>:  <span class="num">1.5rem</span>;   <span class="cm">/* 24px */</span>
+  <span class="prop">--space-8</span>:  <span class="num">2rem</span>;     <span class="cm">/* 32px */</span>
+  <span class="prop">--space-10</span>: <span class="num">2.5rem</span>;   <span class="cm">/* 40px */</span>
+  <span class="prop">--space-12</span>: <span class="num">3rem</span>;     <span class="cm">/* 48px */</span>
+  <span class="prop">--space-16</span>: <span class="num">4rem</span>;     <span class="cm">/* 64px */</span>
+  <span class="prop">--space-20</span>: <span class="num">5rem</span>;     <span class="cm">/* 80px */</span>
+
+  <span class="cm">/* ── BORDER RADIUS ── */</span>
+  <span class="prop">--radius-xs</span>:  <span class="num">2px</span>;
+  <span class="prop">--radius-sm</span>:  <span class="num">6px</span>;
+  <span class="prop">--radius-md</span>:  <span class="num">8px</span>;
+  <span class="prop">--radius-lg</span>:  <span class="num">12px</span>;
+  <span class="prop">--radius-xl</span>:  <span class="num">16px</span>;
+  <span class="prop">--radius-full</span>:<span class="num">9999px</span>;
+
+  <span class="cm">/* ── SHADOWS ── */</span>
+  <span class="prop">--shadow-xs</span>:  <span class="num">0 1px 3px</span>   <span class="fn">rgba</span>(<span class="num">0,0,0,.06</span>);
+  <span class="prop">--shadow-sm</span>:  <span class="num">0 2px 12px</span>  <span class="fn">rgba</span>(<span class="num">0,0,0,.06</span>);
+  <span class="prop">--shadow-md</span>:  <span class="num">0 4px 20px</span>  <span class="fn">rgba</span>(<span class="num">0,0,0,.08</span>);
+  <span class="prop">--shadow-lg</span>:  <span class="num">0 8px 32px</span>  <span class="fn">rgba</span>(<span class="num">0,0,0,.12</span>);
+  <span class="prop">--shadow-xl</span>:  <span class="num">0 16px 48px</span> <span class="fn">rgba</span>(<span class="num">0,0,0,.16</span>);
+  <span class="prop">--shadow-focus</span>: <span class="num">0 0 0 3px</span> <span class="fn">rgba</span>(<span class="num">26,79,156,.20</span>);
+
+  <span class="cm">/* ── Z-INDEX ── */</span>
+  <span class="prop">--z-dropdown</span>: <span class="num">100</span>;
+  <span class="prop">--z-sticky</span>:   <span class="num">200</span>;
+  <span class="prop">--z-overlay</span>:  <span class="num">500</span>;
+  <span class="prop">--z-modal</span>:    <span class="num">600</span>;
+  <span class="prop">--z-toast</span>:    <span class="num">700</span>;
+  <span class="prop">--z-tooltip</span>:  <span class="num">800</span>;
+
+  <span class="cm">/* ── TRANSITIONS ── */</span>
+  <span class="prop">--transition-fast</span>:   <span class="num">150ms</span> ease;
+  <span class="prop">--transition-base</span>:   <span class="num">200ms</span> ease;
+  <span class="prop">--transition-slow</span>:   <span class="num">300ms</span> ease;
+  <span class="prop">--easing-spring</span>: <span class="fn">cubic-bezier</span>(<span class="num">0.16, 1, 0.3, 1</span>);
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 18 — IMPLEMENTATION
+  ════════════════════════════════════════ -->
+  <section class="section" id="s18">
+    <div class="section-header">
+      <div class="section-number">Section 18</div>
+      <h2 class="section-title">Implementation Notes</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>File Architecture</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">File Structure</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code>styles/
+├── tokens.css       <span class="cm">→ CSS variables (:root)</span>
+├── base.css         <span class="cm">→ reset + h1–h6, p, a base styles</span>
+├── components/
+│   ├── button.css
+│   ├── card.css
+│   ├── nav.css
+│   ├── form.css
+│   └── badge.css
+├── utilities.css    <span class="cm">→ spacing helpers, text utilities</span>
+└── pages/           <span class="cm">→ page-specific overrides only</span></code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Token Usage Rule</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">/* ✅ Correct — use tokens */</span>
+<span class="fn">.card</span> {
+  <span class="prop">color</span>: <span class="fn">var</span>(<span class="str">--color-text-primary</span>);
+  <span class="prop">background</span>: <span class="fn">var</span>(<span class="str">--color-bg</span>);
+  <span class="prop">border-radius</span>: <span class="fn">var</span>(<span class="str">--radius-lg</span>);
+  <span class="prop">box-shadow</span>: <span class="fn">var</span>(<span class="str">--shadow-sm</span>);
+}
+
+<span class="cm">/* ❌ Incorrect — hard-coded values */</span>
+<span class="fn">.card</span> {
+  <span class="prop">color</span>: <span class="str">#1E2532</span>;
+  <span class="prop">background</span>: <span class="str">#ffffff</span>;
+  <span class="prop">border-radius</span>: <span class="num">12px</span>;
+  <span class="prop">box-shadow</span>: <span class="num">0 2px 12px rgba(0,0,0,.06)</span>;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>BEM Component Structure</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">HTML</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">&lt;!-- BEM: block__element--modifier --&gt;</span>
+&lt;<span class="kw">div</span> <span class="prop">class</span>=<span class="str">"card card--service"</span>&gt;
+  &lt;<span class="kw">div</span> <span class="prop">class</span>=<span class="str">"card__icon"</span>&gt;
+    &lt;<span class="kw">img</span> <span class="prop">src</span>=<span class="str">"icon-cloud.svg"</span> <span class="prop">alt</span>=<span class="str">""</span> <span class="prop">aria-hidden</span>=<span class="str">"true"</span>&gt;
+  &lt;/<span class="kw">div</span>&gt;
+  &lt;<span class="kw">h3</span> <span class="prop">class</span>=<span class="str">"card__title"</span>&gt;CloudOps&lt;/<span class="kw">h3</span>&gt;
+  &lt;<span class="kw">p</span> <span class="prop">class</span>=<span class="str">"card__description"</span>&gt;Infrastructure automation at scale.&lt;/<span class="kw">p</span>&gt;
+  &lt;<span class="kw">a</span> <span class="prop">href</span>=<span class="str">"/services/cloudops"</span> <span class="prop">class</span>=<span class="str">"btn btn--text"</span>&gt;Explore More →&lt;/<span class="kw">a</span>&gt;
+&lt;/<span class="kw">div</span>&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Responsive &amp; Fluid Typography</h3>
+      <div class="code-block">
+        <div class="code-block-header"><span class="code-lang">CSS</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code><span class="cm">/* Mobile-first, fluid hero heading */</span>
+<span class="fn">h1</span> { <span class="prop">font-size</span>: <span class="fn">clamp</span>(<span class="num">2rem</span>, <span class="num">5vw</span>, <span class="num">3.5rem</span>); }
+
+<span class="cm">/* Responsive card grid */</span>
+<span class="fn">.service-grid</span> {
+  <span class="prop">display</span>: <span class="kw">grid</span>;
+  <span class="prop">grid-template-columns</span>: <span class="fn">repeat</span>(<span class="kw">auto-fill</span>, <span class="fn">minmax</span>(<span class="num">280px</span>, <span class="num">1fr</span>));
+  <span class="prop">gap</span>: <span class="fn">var</span>(<span class="str">--space-6</span>);
+}
+
+<span class="cm">/* Font loading — prevent FOIT */</span>
+<span class="kw">@font-face</span> {
+  <span class="prop">font-display</span>: <span class="kw">swap</span>;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Naming Conventions</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pattern</th><th>Convention</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>CSS classes</td><td>BEM</td><td><code>card__title</code>, <code>btn--primary</code></td></tr>
+            <tr><td>CSS custom properties</td><td>kebab-case with prefix</td><td><code>--color-primary</code>, <code>--space-4</code></td></tr>
+            <tr><td>Icon files</td><td>kebab-case</td><td><code>arrow-right.svg</code></td></tr>
+            <tr><td>Image files</td><td>kebab-case</td><td><code>hero-background.webp</code></td></tr>
+            <tr><td>Component files (JS)</td><td>PascalCase</td><td><code>ServiceCard.tsx</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 19 — DO'S AND DON'TS
+  ════════════════════════════════════════ -->
+  <section class="section" id="s19">
+    <div class="section-header">
+      <div class="section-number">Section 19</div>
+      <h2 class="section-title">Do's and Don'ts</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Visual</h3>
+      <div class="do-dont">
+        <div class="do-box"><h5>✓ Do</h5><ul>
+          <li>Use the defined color palette exclusively</li>
+          <li>Maintain clear H1 &gt; H2 &gt; H3 hierarchy</li>
+          <li>Use white space generously</li>
+          <li>Alternate section backgrounds (white / gray / navy)</li>
+          <li>Use device mockups with real screenshots</li>
+        </ul></div>
+        <div class="dont-box"><h5>✕ Don't</h5><ul>
+          <li>Introduce off-brand colors without approval</li>
+          <li>Stack similar-weight headings together</li>
+          <li>Cram too much content into one section</li>
+          <li>Use the same background for every section</li>
+          <li>Mix icon sizes inconsistently in a component</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Typography</h3>
+      <div class="do-dont">
+        <div class="do-box"><h5>✓ Do</h5><ul>
+          <li>Use Poppins for headings, Inter for body</li>
+          <li>Use the defined type scale</li>
+          <li>Weight 600–700 for headings</li>
+          <li>Line-height 1.7 for body paragraphs</li>
+          <li>Cap paragraph width at 70ch</li>
+        </ul></div>
+        <div class="dont-box"><h5>✕ Don't</h5><ul>
+          <li>Mix 3+ font families on a page</li>
+          <li>Use arbitrary font sizes outside the scale</li>
+          <li>Set body copy in weight 700</li>
+          <li>Use line-height 1.0–1.2 for body text</li>
+          <li>Allow full-width paragraphs on wide screens</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Color</h3>
+      <div class="do-dont">
+        <div class="do-box"><h5>✓ Do</h5><ul>
+          <li>Use #F5A623 yellow for primary CTAs</li>
+          <li>Use navy #0B1F3A for footer and dark heroes</li>
+          <li>Use brand blue for links and interactive elements</li>
+          <li>Test all text/background contrast pairs</li>
+          <li>Use semantic colors (green=success, red=error)</li>
+        </ul></div>
+        <div class="dont-box"><h5>✕ Don't</h5><ul>
+          <li>Use yellow as a background for large sections</li>
+          <li>Use navy for body text on white</li>
+          <li>Use brand blue for purely decorative backgrounds</li>
+          <li>Assume yellow on white passes contrast (it doesn't)</li>
+          <li>Use brand blue for error states</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Buttons &amp; CTAs</h3>
+      <div class="do-dont">
+        <div class="do-box"><h5>✓ Do</h5><ul>
+          <li>One primary CTA per viewport section</li>
+          <li>Write action-oriented CTA text</li>
+          <li>Match button style to background context</li>
+          <li>Consistent padding and border-radius across buttons</li>
+        </ul></div>
+        <div class="dont-box"><h5>✕ Don't</h5><ul>
+          <li>Put two yellow primary buttons side by side</li>
+          <li>Use "Submit", "Click Here", "Learn More" (generic)</li>
+          <li>Use yellow button on yellow/warm section background</li>
+          <li>Mix different border-radius values across buttons</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SECTION 20 — BRAND SUMMARY
+  ════════════════════════════════════════ -->
+  <section class="section" id="s20">
+    <div class="section-header">
+      <div class="section-number">Section 20</div>
+      <h2 class="section-title">Final Brand Summary</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>Who BiztechCS Is</h3>
+      <p>Biztech Consulting &amp; Solutions is a 19-year-old, 200-person technology firm that turns complex digital problems into scalable, measurable solutions. They are not just a dev shop — they are a long-term technology partner for companies that need to move faster, operate smarter, and grow sustainably.</p>
+    </div>
+
+    <div class="subsection">
+      <h3>How the Visual System Works Together</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0">
+        <div style="background:var(--color-navy);color:#fff;padding:20px;border-radius:var(--radius-lg)">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-accent);margin-bottom:8px">Navy</div>
+          <div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.8)">Grounds the brand: authority, stability, trustworthiness</div>
+        </div>
+        <div style="background:var(--color-primary);color:#fff;padding:20px;border-radius:var(--radius-lg)">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);margin-bottom:8px">Blue</div>
+          <div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.9)">Drives action: links, buttons, interactive affordances</div>
+        </div>
+        <div style="background:var(--color-accent);color:var(--color-navy);padding:20px;border-radius:var(--radius-lg)">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(11,31,58,.6);margin-bottom:8px">Yellow</div>
+          <div style="font-size:13px;line-height:1.6;color:rgba(11,31,58,.85)">Converts: reserved for the single most important CTA — like a spotlight</div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--color-border);padding:20px;border-radius:var(--radius-lg)">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-gray-500);margin-bottom:8px">White / Gray</div>
+          <div style="font-size:13px;line-height:1.6;color:var(--color-gray-700)">Gives the design room to breathe; surfaces that showcase content</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>How to Use These Guidelines</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:16px 0">
+        <div style="background:var(--color-gray-50);border:1px solid var(--color-border);padding:20px;border-radius:var(--radius-md)">
+          <div style="font-size:13px;font-weight:700;color:var(--color-primary);margin-bottom:8px">🎨 Designers</div>
+          <div style="font-size:13px;color:var(--color-gray-700);line-height:1.6">Use color tokens, type scale, and component specs as the foundation for every mockup. Do not deviate without a design system proposal.</div>
+        </div>
+        <div style="background:var(--color-gray-50);border:1px solid var(--color-border);padding:20px;border-radius:var(--radius-md)">
+          <div style="font-size:13px;font-weight:700;color:var(--color-primary);margin-bottom:8px">💻 Developers</div>
+          <div style="font-size:13px;color:var(--color-gray-700);line-height:1.6">Implement the CSS variables from Section 17 as the first file in every project. Reference tokens — never hard-code hex values.</div>
+        </div>
+        <div style="background:var(--color-gray-50);border:1px solid var(--color-border);padding:20px;border-radius:var(--radius-md)">
+          <div style="font-size:13px;font-weight:700;color:var(--color-primary);margin-bottom:8px">✍️ Writers</div>
+          <div style="font-size:13px;color:var(--color-gray-700);line-height:1.6">Re-read Section 16 before drafting new pages. Start with the reader's problem, end with a clear action.</div>
+        </div>
+        <div style="background:var(--color-gray-50);border:1px solid var(--color-border);padding:20px;border-radius:var(--radius-md)">
+          <div style="font-size:13px;font-weight:700;color:var(--color-primary);margin-bottom:8px">📢 Marketing</div>
+          <div style="font-size:13px;color:var(--color-gray-700);line-height:1.6">All assets — ads, social, email — must use the defined palette, typography, and CTA language. Off-brand assets dilute 19 years of trust.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-primary) 100%);border-radius:var(--radius-lg);padding:48px 40px;text-align:center;margin-top:32px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent);margin-bottom:16px">The Brand Promise</div>
+      <div style="font-family:var(--font-heading);font-size:clamp(22px,3vw,36px);font-weight:700;color:#fff;line-height:1.2">"Tech that works,<br>so you don't have to."</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:20px">BiztechCS Brand Guidelines · Version 1.0 · June 2026</div>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<script>
+function copyCode(btn) {
+  const pre = btn.closest('.code-block').querySelector('pre');
+  navigator.clipboard.writeText(pre.innerText).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+
+function setTab(idx) {
+  const contents = [
+    'Full-stack software product engineering from architecture to delivery — web apps, mobile, APIs, and integrations built for scale.',
+    'Machine learning, NLP, generative AI, and intelligent automation — tailored models trained on your business data.',
+    'CI/CD pipelines, Kubernetes orchestration, infrastructure-as-code, and cloud-native architecture on AWS, Azure, or GCP.',
+    'Custom ecommerce platforms, Shopify/Magento builds, payment integration, and omnichannel retail solutions.'
+  ];
+  const btns = document.querySelectorAll('.tab-btn');
+  btns.forEach((b,i) => {
+    b.style.color = i===idx ? 'var(--color-primary)' : 'var(--color-gray-500)';
+    b.style.borderBottomColor = i===idx ? 'var(--color-primary)' : 'transparent';
+  });
+  document.getElementById('tabcontent').innerHTML = `<p style="margin:0;font-size:14px;color:var(--color-gray-700)">${contents[idx]}</p>`;
+}
+
+function toggleAccordion(btn) {
+  const body = btn.nextElementSibling;
+  const arrow = btn.querySelector('span');
+  const isOpen = body.style.display !== 'none' && body.style.display !== '';
+  body.style.display = isOpen ? 'none' : 'block';
+  arrow.style.transform = isOpen ? '' : 'rotate(90deg)';
+}
+
+// Sidebar active state
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.2, rootMargin: '-10% 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
