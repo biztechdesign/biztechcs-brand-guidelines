@@ -123,16 +123,6 @@ Avoid: Submit, Click here, Learn more, Talk to Experts, Get Started.
 
 **Hashtags / handle:** @biztechcs · #BiztechCS
 
-## 9. Checklist
-
-- [ ] Inter only, logo from the SVG, correct version for the background
-- [ ] Ink + teal only; no yellow, orange, navy, purple
-- [ ] One headline, one highlighted phrase, one CTA
-- [ ] Title capitalises every word; description in sentence case
-- [ ] Stats exact; no invented numbers; no "leading" / "world-class"
-- [ ] Text inside margins, readable at phone size, captions on video
-- [ ] End card with logo, CTA and biztechcs.com
-
 ---
 
 *Full website design system (developer detail) lives in [`reference/`](reference/). Explainer-video production standard: [`video-guidelines.md`](video-guidelines.md).*

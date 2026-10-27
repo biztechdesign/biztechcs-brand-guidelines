@@ -26,7 +26,7 @@ body{font-family:"Inter",system-ui,sans-serif;color:var(--text);background:var(-
 .nav-link{display:block;padding:8px 24px;font-size:13px;color:var(--on-dark);text-decoration:none;transition:.15s;border-left:2px solid transparent}
 .nav-link:hover{color:#fff;background:rgba(255,255,255,.05)}
 .nav-link.active{color:#fff;background:rgba(53,176,191,.12);border-left-color:var(--teal)}
-.wrap{flex:1;min-width:0;max-width:1120px;padding:48px 56px 80px}
+.wrap{flex:1;min-width:0;padding:48px 56px 80px}
 section{scroll-margin-top:24px}
 header.top{background:linear-gradient(150deg,var(--ink),var(--ink-2));color:#fff;border-radius:20px;padding:44px 48px;position:relative;overflow:hidden;margin-bottom:28px}
 header.top::after{content:'';position:absolute;inset:0;background:radial-gradient(600px 260px at 80% -10%,rgba(53,176,191,.22),transparent 60%);pointer-events:none}
@@ -105,6 +105,30 @@ td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
 .check li::before{content:'';position:absolute;left:0;top:4px;width:14px;height:14px;border:1.5px solid var(--indigo);border-radius:4px}
 footer{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
 footer a{color:var(--indigo)}
+
+/* mockups scale with their width (1080-canvas proportions) */
+.grid.g2>div{container-type:inline-size;min-width:0}
+.post,.light{padding:7.4cqw}
+.post .logo,.light .logo{height:4.4cqw}
+.post .e,.light .e{font-size:2.3cqw;margin-bottom:1cqw}
+.post .h,.light .h{font-size:7cqw;margin:1.6cqw 0 2.2cqw}
+.post .s{font-size:3cqw;max-width:86%}
+.post .stat{gap:5cqw;margin-top:3.4cqw}
+.post .stat b{font-size:8cqw}
+.post .stat span{font-size:2.3cqw}
+.post .foot,.light .foot{font-size:2.3cqw}
+.mock .btn{font-size:2.8cqw;padding:2.4cqw 3.8cqw;border-radius:2cqw;gap:1.6cqw}
+.light .cards{gap:1.8cqw}
+.light .card{padding:2.8cqw;border-radius:2.8cqw}
+.light .chip{width:7cqw;height:7cqw;border-radius:1.8cqw;margin-bottom:1.8cqw}
+.light .chip svg{width:3.6cqw;height:3.6cqw}
+.light .card b{font-size:2.8cqw}
+.light .card span{font-size:2.3cqw}
+.endcard{gap:2.2cqw;padding:5cqw}
+.endcard img{height:5cqw}
+.endcard .h{font-size:4.2cqw;max-width:70%}
+.endcard .u{font-size:2.2cqw}
+.endcard .btn{font-size:2.4cqw;padding:2cqw 3.4cqw;border-radius:1.6cqw}
 @media(max-width:900px){.sidebar{display:none}.wrap{padding:24px 20px 60px}}
 @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.g6{grid-template-columns:repeat(3,1fr)}section{padding:20px}header.top{padding:28px 22px}.type-row{flex-direction:column;gap:2px}}
 </style>
@@ -125,7 +149,6 @@ footer a{color:var(--indigo)}
     <a href="#s4" class="nav-link">04 · Layout</a>
     <a href="#s5" class="nav-link">05 · Video</a>
     <a href="#s6" class="nav-link">06 · Words</a>
-    <a href="#s7" class="nav-link">07 · Before you post</a>
     <div class="nav-section-label">More</div>
     <a href="brand-guidelines.md" class="nav-link">Markdown version ↗</a>
     <a href="video-guidelines.md" class="nav-link">Explainer video standard ↗</a>
@@ -309,18 +332,6 @@ footer a{color:var(--indigo)}
   </div>
 </section>
 
-<section id="s7">
-  <h2><small>07</small> Before you post</h2>
-  <ul class="check">
-    <li>Inter only; logo from the SVG; right version for the background</li>
-    <li>Ink + teal only; no yellow, orange, navy, purple</li>
-    <li>One headline, one teal phrase, one CTA</li>
-    <li>Title capitalises every word; description in sentence case</li>
-    <li>Stats exact; no invented numbers; no "leading" / "world-class"</li>
-    <li>Text inside margins; readable at phone size; captions on video</li>
-    <li>End card with logo, CTA and biztechcs.com</li>
-  </ul>
-</section>
 
 <footer>BiztechCS Brand Guide v2.0 · October 2026 · <a href="brand-guidelines.md">Markdown</a> · full website design system in <a href="reference/">reference/</a></footer>
 </main>
