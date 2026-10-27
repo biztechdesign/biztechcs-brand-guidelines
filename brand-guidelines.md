@@ -47,18 +47,39 @@ Mix: mostly paper/mist or ink, teal as the accent (buttons, one highlighted word
 
 ## 4. Typography
 
-**Inter only.** Weights 400, 500, 600, 700. No other font, no weight 800.
+Read from the biztechcs.com home page on 27 Oct 2026. **Inter only**, weights 400 · 500 · 600 · 700 (no 800, no second family). Headings H1–H4 are rendered Title Case by CSS; write them in sentence case.
 
-| Element | Style | 1080 × 1080 / 1350 | 1920 × 1080 video |
-|---|---|---|---|
-| Eyebrow | 600 · UPPERCASE · letter-spacing 0.14em · teal | 28 px | 28 px |
-| Headline | 700 · letter-spacing −0.02em · line-height 1.1 · Title Case | 72–96 px | 72–88 px |
-| Sub-line | 400 · line-height 1.5 | 36–40 px | 36 px |
-| Stat number | 700 · letter-spacing −0.02em; unit (+ %) in bright teal | 120–160 px | 120 px |
-| Pill / tag | 600 · UPPERCASE · 0.04em | 24–26 px | 24 px |
-| Button | 600 | 32 px | 32 px |
+### Website ramp (desktop; phone size in brackets)
 
-Headlines are Title Case ("One Partner. Every Layer."). Everything else sentence case.
+| Role | Size · weight | Line height | Tracking | Case | Colour |
+|---|---|---|---|---|---|
+| Kicker / eyebrow | 14 · 600 | 1.5 | +0.15em (+0.14em on dark) | UPPERCASE | teal `#0E7C88`; bright teal `#35B0BF` on dark |
+| H1 hero | 56 · 700 (34) | 1.08 | −0.025em | Title Case | ink; one phrase in teal |
+| H2 section | 40 · 700 (28) | 1.2 | −0.02em | Title Case | ink; white on dark |
+| H3 / H4 | 24 · 600 / 20 · 600 | 1.5 | 0 | Title Case | ink |
+| Lead / sub-line | 18 · 400 (16) | 1.6 | 0 | Sentence | `#40454E` hero · `#5E6779` sections · `#AEB8CA` on dark |
+| Body | 16 · 400 | 1.5–1.55 | 0 | Sentence | `#232B3A`; `#5E6779` in cards |
+| Quote | 16 · 500 | 1.6 | 0 | Sentence | `#232B3A`; opening “ 38 px bright teal |
+| Small / meta | 13 · 400 | 1.5 | 0 | Sentence | `#5E6779`; `#AEB8CA` on dark |
+| Label / name | 13 · 600 | 1.5 | 0 | Sentence | ink |
+| Stat number | 48 · 700 (32) | 1 | −0.02em | — | white on ink; unit (+ %) at 0.62em in bright teal; label 13 · 400 · +0.02em `#AEB8CA` |
+| Tag / date / step | 14 · 600–700 | 1.5 | +0.04 to +0.12em | UPPERCASE | teal, no background |
+| Pill | 13 · 600 (accelerator 14 · 700) | 1.5 | +0.04em (+0.08em) | UPPERCASE | `#0A6772` on `#E6F5F7`; flag: white on teal |
+| Button | 15.5 · 600 (header 14.5) | 1.5 | 0 | Sentence | white on teal; ghost ink |
+| Text link / card link | 16 · 600 / 13 · 600 | 1.5 | 0 | Sentence + → | teal |
+| Nav / tab | 15 · 500 / 13.5 · 600 | 1 | 0 | Sentence | `#232B3A` |
+
+**Hierarchy to keep:** H1 = 3.5× body, H2 = 2.5×, stat = 3×, H3 = 1.5×, H4 = 1.25×, lead = 1.125×, small = 0.8×. Titles get tighter as they get bigger; only 13–14 px caps get wide tracking. Weight tops out at 700.
+
+### Social canvas scale (same ratios, body = 36 px on 1080)
+
+| Canvas | Eyebrow | Headline | H2 / card title | Sub-line | Body | Small | Stat | Pill | Button |
+|---|---|---|---|---|---|---|---|---|---|
+| 1080 × 1080 / 1350 | 32 · 600 caps | 96–126 · 700 | 90 / 45 | 40 | 36 | 28 | 108–144 | 28 · 600 caps | 36 · 600 |
+| 1080 × 1920 story / reel | 32 | 96–112 | 80 / 44 | 40 | 36 | 28 | 120 | 28 | 36 |
+| 1920 × 1080 video | 28–32 | 88–112 | 72 / 40 | 36–40 | 32–36 | 26 | 108–120 | 26 | 32–36 |
+
+Line heights: titles 1.08–1.2, text 1.5–1.6. Tracking: −0.025em on headlines, +0.15em on eyebrows, +0.04em on pills. Highlight one phrase per headline in teal, never more.
 
 ## 5. Layout
 
