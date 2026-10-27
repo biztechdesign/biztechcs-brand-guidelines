@@ -5,6 +5,11 @@ Brand rules for BiztechCS explainer videos (YouTube, LinkedIn). The written comp
 
 Reference build: *Fixed-Price Odoo Upgrades* (September 2026, 1:58).
 
+> **Status (October 2026).** biztechcs.com has since moved to the Ink + Teal system described in
+> [Brand Guide v2.0](brand-guidelines.md) and the full website system in [reference/](reference/) (ink `#10262B`, action teal `#0E7C88`, Inter 400–700, no yellow or orange).
+> The navy / orange palette below is the one the approved reference build uses and remains the video
+> standard until a new reference film is approved on the v2.0 palette. Do not mix the two systems in one film.
+
 ---
 
 ## 1. Format

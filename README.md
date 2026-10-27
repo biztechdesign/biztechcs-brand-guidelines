@@ -1,29 +1,15 @@
-# BiztechCS Brand Guidelines
+# BiztechCS Brand Guide
 
-Complete brand guidelines for **Biztech Consulting & Solutions** ([biztechcs.com](https://www.biztechcs.com)) — for designers, developers, content writers, and marketing teams.
+Short brand guide for **social media videos and images** for Biztech Consulting & Solutions ([biztechcs.com](https://www.biztechcs.com)). Matches the October 2026 website: Inter, ink + teal, one idea per frame.
 
-## Contents
-
-| File | Description |
+| File | What it is |
 |---|---|
-| [`brand-guidelines.html`](brand-guidelines.html) | Interactive guidelines with live component previews, color swatches, copy-ready code blocks, and sidebar navigation. **Open in any browser.** |
-| [`brand-guidelines.md`](brand-guidelines.md) | Markdown source — full reference covering all 20 sections. |
-| [`video-guidelines.md`](video-guidelines.md) | Video guidelines — canvas, colour, type, layout, on-screen copy system, footage, motion, sound, and the end credit for BiztechCS explainer videos. |
+| [`index.html`](index.html) | One-page visual guide: logo, colours, type, post and end-card mockups, words, checklist. **Open in a browser.** |
+| [`brand-guidelines.md`](brand-guidelines.md) | The same guide as text. |
+| [`assets/`](assets/) | Logo SVG, mark SVG, reference screenshots of the live site. |
+| [`video-guidelines.md`](video-guidelines.md) | Production standard for the long-form explainer videos (approved reference build). |
+| [`reference/`](reference/) | Full website design system with developer detail. Not needed for social work. |
 
-## What's covered (20 sections)
+Run locally: `python -m http.server 8080` then open http://localhost:8080/.
 
-Brand overview · Logo · Color palette · Typography · Layout · Spacing · Buttons · Forms · Cards · Navigation · Iconography · Imagery · UI components · Motion · Accessibility · Content style · Design tokens · Implementation · Do's & Don'ts · Brand summary
-
-## Usage
-
-- **Designers** — use the color tokens, type scale, and component specs as the foundation for every mockup.
-- **Developers** — implement the CSS variables (Section 17) first; reference tokens, never hard-code hex values.
-- **Writers** — follow the tone and CTA guidance (Section 16).
-- **Marketing** — keep all assets on-palette, on-type, and on-voice.
-- **Video** — follow [`video-guidelines.md`](video-guidelines.md) for every explainer; the slide system there is the approval standard.
-
-> "Tech that works, so you don't have to."
-
----
-
-*Version 1.0 · June 2026*
+*Version 2.0 · October 2026*
