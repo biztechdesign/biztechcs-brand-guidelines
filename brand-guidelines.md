@@ -47,7 +47,7 @@ Mix: mostly paper/mist or ink, teal as the accent (buttons, one highlighted word
 
 ## 4. Typography
 
-Read from the biztechcs.com home page on 27 Oct 2026. **Inter only**, weights 400 · 500 · 600 · 700 (no 800, no second family). Headings H1–H4 are rendered Title Case by CSS; write them in sentence case.
+Read from the biztechcs.com home page on 27 Oct 2026. **Inter only**, weights 400 · 500 · 600 · 700 (no 800, no second family). **Titles** (H1–H4, card titles, headlines) capitalise every word: *One Partner. Every Layer.* **Descriptions** (lead, sub-lines, body, captions) are sentence case: *Most AI stalls at the pilot.*
 
 ### Website ramp (desktop; phone size in brackets)
 
@@ -105,9 +105,11 @@ Line heights: titles 1.08–1.2, text 1.5–1.6. Tracking: −0.025em on headlin
 - Motion: quick and soft. Text rises 24 px and fades in over 0.5–0.7 s; cards lift 3–6 px; buttons never bounce. Easing ease-out. No spins, flashes or film grain.
 - Every spoken number lands on screen as a stat at the moment it's said.
 - Captions on every talking frame; the video must work on mute.
-- **End card (3 s):** ink gradient, white logo centred, headline "Ready to build something that actually works?", teal button **Book a 30-Min Call →**, `biztechcs.com` in `#AEB8CA`.
+- **End card (3 s):** ink gradient, white logo centred, headline "Ready To Build Something That Actually Works?", teal button **Book a 30-Min Call →**, `biztechcs.com` in `#AEB8CA`.
 
 ## 8. Words
+
+**Case:** titles capitalise every word ("One Partner. Every Layer."); descriptions are sentence case ("Most AI stalls at the pilot.").
 
 **Voice:** short, plain, confident. Two beats, full stops. Name the risk, then the fix.
 "Most AI stalls at the pilot. We take it the last mile." · "One Partner. Every Layer." · "Common questions. Straight answers."
@@ -126,6 +128,7 @@ Avoid: Submit, Click here, Learn more, Talk to Experts, Get Started.
 - [ ] Inter only, logo from the SVG, correct version for the background
 - [ ] Ink + teal only; no yellow, orange, navy, purple
 - [ ] One headline, one highlighted phrase, one CTA
+- [ ] Title capitalises every word; description in sentence case
 - [ ] Stats exact; no invented numbers; no "leading" / "world-class"
 - [ ] Text inside margins, readable at phone size, captions on video
 - [ ] End card with logo, CTA and biztechcs.com
